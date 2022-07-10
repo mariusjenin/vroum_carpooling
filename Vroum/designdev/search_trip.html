@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Site Title -->
+    <title>Rechercher un trajet</title>
+    <!-- Meta Character Set -->
+    <meta charset="UTF-8">
+    <!-- Icon of Vroum -->
+    <link rel="shortcut icon" href="../img/identity/logo_tab.png">
+    <!-- CSS For Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link href="../css/color.css" rel="stylesheet"/>
+    <link href="../css/global.css" rel="stylesheet"/>
+    <link href="../css/search_trip.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <div class="ml-2 mr-5 d-flex align-items-center header_brand_navbar">
+            <img class="mw-100 mh-100 p-2" src="../img/identity/logo_tab.png">
+            <a class="font-weight-bold navbar-brand ml-2 mr-4" href="#">Vroum</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1"
+                aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar1">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown  align-self-lg-center ml-lg-3">
+                    <a class="dropdown-toggle nav-link" href="#" id="dropdown04" data-toggle="dropdown"
+                       data-display="static" aria-haspopup="true" aria-expanded="false">
+                            <span class="text-navbar">
+                                Menu
+                            </span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg-left dropdown-menu-right" aria-labelledby="dropdown04">
+                        <a class="dropdown-item" href="#">Accueil</a>
+                        <a class="dropdown-item" href="#">Profil</a>
+                        <a class="dropdown-item" href="#">Mes trajets</a>
+                        <a class="dropdown-item" href="#">Proposer un trajet</a>
+                        <a class="dropdown-item" href="#">Rechercher un trajet</a>
+                        <a class="dropdown-item" href="#">Mes listes d'amis</a>
+                        <a class="dropdown-item" href="#">Mes notifications</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<div class="container-fluid first_element_page_with_menu h-100">
+    <div class="d-flex justify-content-center">
+        <div class="notch_title_page_fixed p-2 px-5 m-0">Rechercher un trajet
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-end">
+        <a href="create_trip.html" class="notch_right_page_absolute p-2 pl-5 pr-3 m-0 d-none d-md-block">Proposer un
+            trajet
+
+            <div class="position-absolute btn_hoverable add_trip d-flex justify-content-center align-items-center">
+                <img class="mw-100 mh-100" src="../img/icons/add_fill.png"/>
+            </div>
+        </a>
+    </div>
+
+    <form name="" class="pt-5" action="#" data-method="post" onsubmit="return submit_form(event,done_search_trip);">
+        <div class="row mt-4 mb-4">
+            <div class="col-12 col-lg-6 mt-3 order-0">
+                <div class="h-100 d-flex flex-column justify-content-around align-items-center search_trip_box p-3">
+                    <label for="start-town" class="font-weight-bold">Départ</label>
+                    <input type="text" id="start-town" class="form-control mb-3" required aria-required=true
+                           name="start-town" placeholder="Ville de départ"/>
+                    <input type="date" class="form-control mb-3" required aria-required=true
+                           name="start-day">
+                    <div class="row w-100">
+                        <div class="col-6 pl-0 d-flex flex-column align-items-center">
+                            <label class="font-weight-bold">Entre</label>
+                            <input type="time" class="form-control" required aria-required=true
+                                   name="start-min-time" step="60">
+                        </div>
+                        <div class="col-6 pr-0 d-flex flex-column align-items-center">
+                            <label class="font-weight-bold">Et</label>
+                            <input type="time" class="form-control" required aria-required=true
+                                   name="start-max-time" step="60">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 mt-3 order-0">
+                <div class="h-100 d-flex flex-column justify-content-around align-items-center search_trip_box p-3">
+                    <label for="end-town" class="font-weight-bold">Arrivée</label>
+                    <input type="text" id="end-town" class="form-control mb-3" required aria-required=true
+                           name="end-town" placeholder="Ville d'arrivée"/>
+                    <input type="date" class="form-control mb-3" required aria-required=true
+                           name="end-day">
+                    <div class="row w-100">
+                        <div class="col-6 pl-0 d-flex flex-column align-items-center">
+                            <label class="font-weight-bold">Entre</label>
+                            <input type="time" class="form-control" required aria-required=true
+                                   name="end-min-time" step="60">
+                        </div>
+                        <div class="col-6 pr-0 d-flex flex-column align-items-center">
+                            <label class="font-weight-bold">Et</label>
+                            <input type="time" class="form-control" required aria-required=true
+                                   name="end-max-time" step="60">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-100">
+            <div class="row">
+                <div class="col-12 col-lg-8 mb-3 mb-lg-0">
+                    <div class="h-100 d-flex flex-column justify-content-around search_trip_box p-3">
+                        <p class="font-weight-bold align-self-center">Recherche avancée</p>
+                        <div>
+                            <div class="font-weight-bold">Trajet</div>
+
+                            <div class="d-inline-block mr-3">
+                                <input type="checkbox" id="public" name="public" checked>
+                                <label for="public">Public</label>
+                            </div>
+                            <div class="d-inline-block">
+                                <input type="checkbox" id="private" name="private" checked>
+                                <label for="private">Privé</label>
+                            </div>
+                            <img class="lock_picture_mini" src="../img/icons/lock.png">
+                        </div>
+                        <div>
+                            <div class="font-weight-bold">Sexe</div>
+
+
+                            <div class="d-inline-block mr-3">
+                                <input type="checkbox" id="masculin" name="masculin" checked>
+                                <label for="masculin">Masculin</label>
+                            </div>
+                            <div class="d-inline-block">
+                                <input type="checkbox" id="feminin" name="feminin" checked>
+                                <label for="feminin">Féminin</label>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="font-weight-bold">Prix : </label>
+                            <input type="text" id="amount" class="amount_input_search_trip" readonly>
+                            <div id="slider-range"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="d-flex justify-content-center align-items-center h-100">
+                        <input class="submit_search_trip btn_hoverable py-3 px-5 font-weight-bold text-white btn button"
+                               type="submit" value="Rechercher">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <hr class="hr_search_trip">
+    <div class="font-weight-bold title_result text-center">Résultat</div>
+    <hr class="hr_search_trip">
+
+    <div class="font-italic d-none text-center">
+        Pas de resultats pour votre recherche
+    </div>
+
+    <div class="d-none loading_search_trip flex-row justify-content-center">
+        <img src="../img/loading/loading.gif">
+    </div>
+    <div class="trip_list">
+
+
+        <a href="#" class="d-flex flex-column justify-content-around align-items-center search_trip_result p-3 mb-3">
+            <div class="row w-100">
+                <div class="col-12 col-lg-5 pl-0">
+                    <div class="d-flex flex-row align-items-center">
+                        <img class="picture_driver_trip" src="../img/icons/defaultPP.jpg">
+                        <div class="font-weight-bold d-flex flex-column justify-content-around align-items-center w-100">
+                            John Doe
+                            <div>
+                                <i class="bi bi-star-fill m-1 star_profile"></i>
+                                <i class="bi bi-star-fill m-1 star_profile"></i>
+                                <i class="bi bi-star-fill m-1 star_profile"></i>
+                                <i class="bi bi-star-fill m-1 star_profile"></i>
+                                <i class="bi bi-star m-1 star_profile"></i>
+                            </div>
+                            Homme
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8 col-lg-6">
+                    <div class="h-100 d-flex flex-row align-items-center justify-content-center flex-wrap">
+                        <div class="p-2">
+                            Trajet de
+                        </div>
+                        <div class="p-2 font-weight-bold">
+                            VilleA
+                        </div>
+                        <div class="p-2">
+                            jusqu'à
+                        </div>
+                        <div class="p-2 font-weight-bold">
+                            VilleB
+                        </div>
+                        <div class="p-2">
+                            à
+                        </div>
+                        <div class="p-2 font-weight-bold">
+                            9h15
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 col-lg-1">
+                    <div class="h-100 d-flex flex-row align-items-center justify-content-end mr-0 mr-lg-3">
+                        <img class="lock_picture mr-2" src="../img/icons/lock.png">
+                        <div class="font-weight-bold price_result ">25€</div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" class="d-flex flex-column justify-content-around align-items-center search_trip_result p-3 mb-3">
+            <div class="row w-100">
+                <div class="col-12 col-lg-5 pl-0">
+                    <div class="d-flex flex-row align-items-center">
+                        <img class="picture_driver_trip" src="../img/icons/defaultPP.jpg">
+                        <div class="font-weight-bold d-flex flex-column justify-content-around align-items-center w-100">
+                            John Doe
+                            <div>
+                                <i class="bi bi-star-fill m-1 star_profile"></i>
+                                <i class="bi bi-star-fill m-1 star_profile"></i>
+                                <i class="bi bi-star-fill m-1 star_profile"></i>
+                                <i class="bi bi-star-fill m-1 star_profile"></i>
+                                <i class="bi bi-star m-1 star_profile"></i>
+                            </div>
+                            Homme
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8 col-lg-6">
+                    <div class="h-100 d-flex flex-row align-items-center justify-content-center flex-wrap">
+                        <div class="p-2">
+                            Trajet de
+                        </div>
+                        <div class="p-2 font-weight-bold">
+                            VilleC
+                        </div>
+                        <div class="p-2">
+                            jusqu'à
+                        </div>
+                        <div class="p-2 font-weight-bold">
+                            VilleD
+                        </div>
+                        <div class="p-2">
+                            à
+                        </div>
+                        <div class="p-2 font-weight-bold">
+                            10h15
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 col-lg-1">
+                    <div class="h-100 d-flex flex-row align-items-center justify-content-end mr-0 mr-lg-3">
+                        <div class="font-weight-bold price_result">25€</div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <hr class="hr_search_trip">
+</div>
+
+
+<!-- JQuery-->
+<script src="../js/jquery-3.5.1.min.js"></script>
+<!-- JavaScript Popper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<!-- JavaScript Bootstrap -->
+<script src="../js/bootstrap.min.js"></script>
+<!-- Custom JavaScript -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="../js/search_trip.js"></script>
+</body>
+</html>

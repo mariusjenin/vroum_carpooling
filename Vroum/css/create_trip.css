@@ -1,0 +1,74 @@
+/* CSS OF THE PAGE "CREATE A TRIP" */
+
+.creation_trajet_submit {
+    box-shadow: -5px 5px 10px 0 var(--translucid-02-black);
+    border-radius: 15px 15px 15px 15px;
+    background-color: var(--pink_logo_brand_vroum);
+    font-size: 1.2rem;
+}
+
+.hide_with_check_false {
+    pointer-events: none;
+    opacity: 0.5;
+    display: inline;
+}
+
+input[type="checkbox"]:checked ~ .hide_with_check_false {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.create_trip_input {
+    box-shadow: 0px 0px 10px 0 var(--translucid-02-black);
+    border-radius: 15px;
+    padding-bottom: 10px;
+}
+
+.intermediate_city_input{
+    border-radius: .25rem;
+    border-top-right-radius: 17px;
+    border-bottom-right-radius: 17px;
+}
+
+.btn_add_intermediate_city {
+    display: inline;
+    transform: translateX(-10%);
+    position: absolute;
+    height: calc(1.5em + .75rem - 4px);
+    border-radius: 50%;
+    box-shadow: -1px 1px 10px 0 var(--translucid-03-black);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn_add_intermediate_city:hover {
+    height: calc(1.5em + .75rem - 3px);
+    box-shadow: -2px 2px 15px 0 var(--translucid-03-black);
+}
+
+.btn_add_intermediate_city:active {
+    height: calc(1.5em + .75rem - 5px);
+    box-shadow: 0px 0px 5px 0 var(--translucid-03-black);
+}
+
+.btn_remove_intermediate_city {
+    display: inline;
+    transform: translateX(150%);
+    position: absolute;
+    height: calc(1.5em + .75rem - 8px);
+    border-radius: 50%;
+    box-shadow: -2px 2px 5px 0 var(--translucid-03-black);
+    transition: 0.1s;
+    cursor: pointer;
+}
+
+.btn_remove_intermediate_city:hover {
+    transform: translateX(149%);
+    height: calc(1.5em + .75rem - 7px);
+}
+
+.btn_remove_intermediate_city:active {
+    transform: translateX(151%);
+    height: calc(1.5em + .75rem - 9px);
+    box-shadow: 0px 0px 3px 0 var(--translucid-03-black);
+}

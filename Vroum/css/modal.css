@@ -1,0 +1,69 @@
+/* CSS FOR MODAL WINDOW */
+
+.blurred_element{
+    height: 100vh;
+    overflow: hidden;
+    filter: blur(10px);
+}
+
+.background_modal{
+    background-color: var(--translucid-05-black);
+    z-index: 100;
+}
+
+.modal_block{
+    box-shadow: -5px 5px 10px 0 var(--translucid-05-grey);
+    margin: 20px;
+    max-width: 700px;
+    min-width: 300px;
+    border-radius: 15px;
+    position: relative;
+    top:0;
+    right: 0;
+}
+
+.modal_block > .modal_title{
+    border-radius: 15px 15px 0px 0px;
+}
+
+.modal_block > .modal_content{
+    border-radius: 0px 0px 15px 15px;
+}
+
+
+.modal_title{
+    background-color: var(--translucid-05-white);
+    margin: 0;
+}
+
+.modal_close{
+    display: inline-block;
+    height: 25px;
+    right: 5px;
+    position: absolute;
+    top: 3px;
+}
+
+.modal_content{
+    background-color: var(--white);
+    padding:30px;
+}
+
+.modal_box_choice{
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modal_choice{
+    text-align: center;
+    min-width: 100px;
+    border-radius: 100px;
+    background-color: var(--darkergrey);
+    color: var(--white);
+}
+
+.modal_separator{
+    width: 100%;
+    border-color: var(--translucid-03-black);
+}

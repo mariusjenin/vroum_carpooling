@@ -1,0 +1,116 @@
+@startuml
+
+
+class Utilisateur{
+    -string email
+    -string mdpHashed
+    -string nom
+    -string prenom
+    -string genre
+    -boolean voiture
+    -string tel
+    -string photo
+    + Utilisateur(email,mdp,nom,prenom,genre,voiture,tel,photo=null)
+    + modify(nom,prenom,genre,voiture,tel,newMdp='',newMdp2='',photo=null) : boolean
+}
+
+
+Utilisateur "1"<-Notification : expediteur
+Utilisateur "1"<- Notification : destinataire
+
+
+class ListeUtilisateur{
+    -string nom
+    + ListeUtilisateur(createur,membres[])
+    + setUsers(membres[]) : boolean
+    - addMember(user) : boolean
+    - removeMember(user) : boolean
+}
+
+ListeUtilisateur -d->"*" Utilisateur : membres
+ListeUtilisateur -d->"1" Utilisateur : createur
+
+
+abstract class Trajet{
+    -int dateD
+    -string villeD
+    -string villeA
+    -float prix
+    -int placeMax
+    -string rdvPrecision
+    -string contraintePrecision
+    # Trajet(conducteur,dateD,villeD,villeA,prix,placeMax,rdvPrecision='',contraintePrecision='')
+    + addParticipant(user) : void
+    + removeParticipant(user) : void
+    + addCandidat(user) : void
+    + removeCandidat(user) : void
+    + isFull() : boolean
+}
+
+class TrajetPrive extends Trajet{
+    # TrajetPrive(dateD,villeD,villeA,prix,nbrPlace,listeUsers,rdvPrecision='',contraintePrecision='')
+}
+
+class TrajetPublic extends Trajet{
+}
+
+
+Trajet ->"1" Utilisateur : conducteur
+Trajet ->"*" Utilisateur : participants
+Trajet ->"*" Utilisateur : candidats
+TrajetPrive -l->"1" ListeUtilisateur : userConcernes
+
+
+
+Notification -->"1" Trajet : trajetConcerne
+
+
+class Notification{
+    -string texte
+    -boolean lue
+    + Notification(destinataire,expediteur,type,texte)
+    + setLue() : void
+}
+
+
+class Note{
+    -int notation
+    +Note(userNotant,userNote,notation)
+}
+
+Note ->"1" Utilisateur : userNote
+Note ->"1" Utilisateur : userNotant
+Note ->"1" Trajet : trajetConcerne
+
+enum TypeNotification{
+CANDIDATURE
+SUPPRESSION
+REFUS
+ACCEPTATION
+ANNULATION
+TRAJET_PRIVE_LISTE
+}
+
+note left of TypeNotification::CANDIDATURE
+  Un utilisateur veut faire partie d'un trajet
+end note
+note left of TypeNotification::SUPPRESSION
+  Un conducteur supprime son offre de trajet
+end note
+note left of TypeNotification::REFUS
+  Le conducteur refuse une candidature
+end note
+note left of TypeNotification::ACCEPTATION
+  Le conducteur accepte une candidature
+end note
+note left of TypeNotification::ANNULATION
+  Un participant annule sa participation
+end note
+note left of TypeNotification::TRAJET_PRIVE_LISTE
+  Un conducteur créé un trajet privé pour une liste d'user
+end note
+
+
+Notification -->"1" TypeNotification : type
+
+@enduml

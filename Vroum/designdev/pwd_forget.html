@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Character Set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>mdpOublie</title>
+    <!-- Icon of Vroum -->
+    <link rel="shortcut icon" href="../img/identity/logo_tab.png">
+    <!-- CSS For Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Custom CSS -->
+    <link href="../css/color.css" rel="stylesheet"/>
+    <link href="../css/global.css" rel="stylesheet"/>
+    <link href="../css/signup_login_pwdforget.css" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="background_gradient_animated">
+    <div class="paral_signup_login_pwdforget_1 d-none d-sm-block"> </div>
+    <div class="paral_signup_login_pwdforget_2 d-none d-sm-block"> </div>
+    <div class="paral_signup_login_pwdforget_3 d-none d-sm-block"> </div>
+    <div class="container-fluid d-flex justify-content-center align-items-center flex-column">
+        <div class="d-flex vh-100 justify-content-between align-items-center">
+            <div class="pwdForget_block">
+                <div class="h2 p-3 signup_login_pwdforget_title">
+                    <a href="#" class="mr-3 ml-1 back_signup_login">
+                        <img class="mh-100 mw-100" src="../img/icons/previous.png">
+                    </a>
+                    Récupérez votre compte
+                </div>
+                <form action="" data-method="post" class="signup_login_pwdforget_form" onsubmit="return submit_form(event);">
+
+                    <div class="row">
+                        <div class="d-flex w-100 justify-content-center align-items-center pl-3 pr-3 mb-2">
+                            Insérez votre nouveau mot de passe :
+                        </div>
+
+                        <div class="col-12">
+                            <div class="item_field_signup_login_pwdforget">
+                                <label for="newMDP" class="d-block font-weight-bold">Votre nouveau mot de passe</label>
+                                <input id="newMDP" class="form-control d-block" type="text" placeholder="Nouveau mot de passe"
+                                       required>
+                            </div>
+                            <div class="item_field_signup_login_pwdforget">
+                                <label for="validationMDP" class="d-block font-weight-bold">Confirmation de votre nouveau mot de passe</label>
+                                <input id="validationMDP" class="form-control d-block" type="password" placeholder="Confirmation du mot de passe"
+                                       required>
+                            </div>
+
+                            <div class="block_submit w-100 d-flex align-items-center flex-column text-center">
+                            <button class="submit_signup_login_pwdforget btn_hoverable" type="submit">
+                                <img class="mh-100 mw-100" src="../img/icons/check.png">
+                            </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<!-- JQuery-->
+<script src="../js/jquery-3.5.1.min.js"></script>
+<!-- JavaScript Popper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<!-- JavaScript Bootstrap -->
+<script src="../js/bootstrap.min.js"></script>
+<!-- Custom JavaScript -->
+<script src="../js/submit_form.js"></script>
+</html>

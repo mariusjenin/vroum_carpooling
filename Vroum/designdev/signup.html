@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Site Title -->
+    <title>Inscription</title>
+    <!-- Meta Character Set -->
+    <meta charset="UTF-8">
+    <!-- Icon of Vroum -->
+    <link rel="shortcut icon" href="../img/identity/logo_tab.png">
+    <!-- CSS For Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Custom CSS -->
+    <link href="../css/color.css" rel="stylesheet"/>
+    <link href="../css/global.css" rel="stylesheet"/>
+
+    <link href="../css/signup_login_pwdforget.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="background_gradient_animated">
+    <div class="paral_signup_login_pwdforget_1 d-none d-sm-block"> </div>
+    <div class="paral_signup_login_pwdforget_2 d-none d-sm-block"> </div>
+    <div class="paral_signup_login_pwdforget_3 d-none d-sm-block"> </div>
+    <div class="container-fluid d-flex justify-content-center align-items-center flex-column">
+        <div class="d-flex vh-100 justify-content-between align-items-center">
+            <div class="signup_block">
+                <div class="h1 p-3 signup_login_pwdforget_title">
+                    <a href="#" class="mr-3 ml-1 back_signup_login">
+                        <img class="mh-100 mw-100" src="../img/icons/previous.png">
+                    </a>
+                    Inscription
+                </div>
+                <form action="" data-method="post" class="signup_login_pwdforget_form" onsubmit="return submit_form(event);" enctype="multipart/form-data">
+                    <div class="row">
+
+                        <div class="d-flex w-100 justify-content-center align-items-center pl-3 pr-3 mb-2">
+                            Vous possédez déjà un compte ? Connectez-vous ici :
+                            <a href="login.html" class="btn_signup_login ml-2">
+                                <img class="mh-100 mw-100" src="../img/icons/right.png">
+                            </a>
+                        </div>
+                        <div class="error_form d-none w-100 text-danger font-weight-bold justify-content-center align-items-center pl-3 pr-3 mb-2">
+                            Certaines valeurs ne conviennent pas
+                        </div>
+
+                        <div class="col-6">
+                            <div class="item_field_signup_login_pwdforget">
+                                <label for="email" class="d-block font-weight-bold">Email *</label>
+                                <input id="email" class="form-control d-block" type="email" placeholder="Votre email"
+                                       required>
+                            </div>
+
+                            <div class="item_field_signup_login_pwdforget">
+                                <label for="password" class="d-block font-weight-bold">Mot de passe *</label>
+                                <input id="password" class="form-control d-block" type="password"
+                                       placeholder="Votre mot de passe"
+                                       required>
+                            </div>
+
+                            <div class="item_field_signup_login_pwdforget">
+                                <label for="passwordConfirm" class="d-block font-weight-bold">Confirmez le mot de
+                                    passe *</label>
+                                <input id="passwordConfirm" class="form-control d-block" type="password"
+                                       placeholder="Confirmez le mot de passe" required>
+                            </div>
+
+
+                            <div class="item_field_signup_login_pwdforget">
+                                <label for="profilePic" class="d-block font-weight-bold">Ajoutez une image</label>
+                                <div class="d-flex flex-row align-items-center justify-content-center justify-content-sm-start">
+
+                                    <div class="position-relative">
+                                        <img class="profile_picture_signup_login_pwdforget" src="../img/icons/defaultPP.jpg"/>
+
+                                        <label for="profilePic"
+                                               class="position-absolute m-0 btn_hoverable add_profile_picture d-flex justify-content-center align-items-center">
+                                            <img class="mw-100 mh-100" src="../img/icons/add.png"/>
+                                        </label>
+                                    </div>
+                                    <input id="profilePic" class="form-control-file d-none" type="file"
+                                           alt="Image de profil"
+                                           accept="image/*"
+                                           onchange="loadfile(event)">
+
+                                    <script type="text/javascript">
+                                        var loadfile = function (event) {
+                                            var img = document.getElementsByClassName("profile_picture_signup_login_pwdforget")[0];
+                                            img.src = URL.createObjectURL(event.target.files[0]);
+                                            img.onload = function () {
+                                                URL.revokeObjectURL(img.src);  //Pour libérer la mémoire de l'ancienne image
+                                            }
+                                        };
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-6" id="incriptionColRight">
+                            <div class="item_field_signup_login_pwdforget">
+                                <div class="d-flex">
+                                    <div class="w-50 mr-1">
+                                        <label for="name" class="d-block font-weight-bold">Prenom *</label>
+                                        <input id="name" class="form-control d-block" type="text"
+                                               placeholder="Votre prénom"
+                                               required>
+                                    </div>
+                                    <div class="w-50 ml-1">
+                                        <label for="surname" class="d-block font-weight-bold">Nom *</label>
+                                        <input id="surname" class="form-control d-block" type="text"
+                                               placeholder="Votre nom"
+                                               required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item_field_signup_login_pwdforget">
+                                <label class="font-weight-bold" for="masculin">Sexe *</label>
+                                <div class="d-flex">
+                                    <div class="w-50 mr-1">
+                                        <input id="masculin" type="radio" name="sex" value="masculin" required>
+                                        <label for="masculin">Masculin</label>
+                                    </div>
+                                    <div class="w-50 ml-1">
+                                        <input id="feminin" type="radio" name="sex" value="feminin" required>
+                                        <label for="feminin">Féminin</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item_field_signup_login_pwdforget">
+                                <label class="font-weight-bold" for="voitureOui">Possédez-vous une voiture ? *</label>
+                                <div class="d-flex">
+                                    <div class="w-50 mr-1">
+                                        <input id="voitureOui" type="radio" name="car" value="oui" required>
+                                        <label for="voitureOui">Oui</label>
+                                    </div>
+                                    <div class="w-50 ml-1">
+                                        <input id="voitureNon" type="radio" name="car" value="non" required>
+                                        <label for="voitureNon">Non</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item_field_signup_login_pwdforget">
+                                <label class="font-weight-bold" for="telephone">Téléphone</label>
+                                <input class="form-control " id="telephone" type="text"
+                                       placeholder="Votre numéro de téléphone">
+                            </div>
+
+                        </div>
+
+                        <div class="block_submit w-100 d-flex align-items-center flex-column text-center">
+                            <button class="submit_signup_login_pwdforget btn_hoverable" type="submit">
+                                <img class="mh-100 mw-100" src="../img/icons/check.png">
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<!-- JQuery-->
+<script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
+<!-- JavaScript Popper -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<!-- JavaScript Bootstrap -->
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<!-- Custom JavaScript -->
+<script src="../js/submit_form.js"></script>
+</html>

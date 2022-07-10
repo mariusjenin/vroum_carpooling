@@ -1,0 +1,31 @@
+{
+    "name": "marius/vroum",
+    "require": {
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.2",
+        "selective/basepath": "^1.0",
+        "php-di/slim-bridge": "^3.0",
+        "ext-openssl": "*",
+        "ext-json": "*",
+        "ext-iconv": "*",
+        "ext-pdo": "*",
+        "illuminate/database": "^8.33",
+        "illuminate/events": "^8.33",
+      "ext-fileinfo": "*",
+        "sendgrid/sendgrid": "^7.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vroum\\Controler\\": "src/controler/",
+            "Vroum\\Model\\": "src/model/",
+            "Vroum\\Utils\\": "src/utils/",
+            "Vroum\\View\\": "src/view/",
+            "Vroum\\Middleware\\": "src/middleware/",
+            "Vroum\\Observer\\": "src/observer/",
+            "Vroum\\": "src/"
+        },
+        "files": [
+          "../Vroum/config/config.php"
+        ]
+    }
+}

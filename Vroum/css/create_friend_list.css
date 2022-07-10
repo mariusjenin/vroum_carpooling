@@ -1,0 +1,98 @@
+.mail_input_friend_list{
+    border-radius: .25rem;
+    border-top-right-radius: 17px;
+    border-bottom-right-radius: 17px;
+}
+
+.title_input_friend_list{
+    width: 220px;
+    height: auto  !important;
+    border-radius: 100px;
+}
+
+.btn_add_mail_friend_list {
+    display: inline;
+    transform: translateX(-10%);
+    position: absolute;
+    height: calc(1.5em + .75rem - 4px);
+    border-radius: 50%;
+    box-shadow: -1px 1px 10px 0 var(--translucid-03-black);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn_add_mail_friend_list:hover {
+    height: calc(1.5em + .75rem - 3px);
+    box-shadow: -2px 2px 15px 0 var(--translucid-03-black);
+}
+
+.btn_add_mail_friend_list:active {
+    height: calc(1.5em + .75rem - 5px);
+    box-shadow: 0px 0px 5px 0 var(--translucid-03-black);
+}
+
+.btn_remove_mail_friend_list {
+    display: inline;
+    transform: translateX(150%);
+    position: absolute;
+    height: calc(1.5em + .75rem - 8px);
+    border-radius: 50%;
+    box-shadow: -2px 2px 5px 0 var(--translucid-03-black);
+    transition: 0.1s;
+    cursor: pointer;
+}
+
+.btn_remove_mail_friend_list:hover {
+    transform: translateX(149%);
+    height: calc(1.5em + .75rem - 7px);
+}
+
+.btn_remove_mail_friend_list:active {
+    transform: translateX(151%);
+    height: calc(1.5em + .75rem - 9px);
+    box-shadow: 0px 0px 3px 0 var(--translucid-03-black);
+}
+
+.mail_friend_list{
+    font-family: Coolvetica, sans-serif;
+    font-size: 1rem;
+    border-radius: 20px;
+    border : solid 1px var(--translucid-02-black);
+    transition : 0.1s box-shadow;
+}
+
+.mail_friend_list:hover{
+    box-shadow: 0px 0px 7px 0 var(--translucid-02-black);
+}
+
+.submit_create_friend_list{
+    box-shadow: -5px 5px 10px 0 var(--translucid-02-black);
+    border-radius: 15px 15px 15px 15px;
+    background-color: var(--pink_logo_brand_vroum);
+    font-size: 1.2rem;
+}
+
+.trash_users_list{
+    width: 30px;
+    height: 30px;
+    background-color: var(--red-delete);
+    font-size: 20px;
+    bottom:-10px;
+    right:-10px;
+    z-index: 101;
+    border-radius: 30%;
+}
+
+.trash_users_list>i{
+    margin: 5px;
+}
+
+.previous_user_list{
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+    top:0px;
+    left:0px;
+    z-index: 101;
+    border-radius: 50%;
+}

@@ -1,0 +1,34 @@
+/* COLORS */
+
+html {
+    --pink_logo_brand_vroum: #c3015b;
+    --white:white;
+    --translucid-03-white:rgba(255, 255, 255, 0.3);
+    --translucid-05-white:rgba(255, 255, 255, 0.5);
+    --translucid-08-white:rgba(255, 255, 255, 0.8);
+    --black:black;
+    --translucid-07-black: rgba(0, 0, 0, 0.7);
+    --translucid-05-black: rgba(0, 0, 0, 0.5);
+    --translucid-03-black: rgba(0, 0, 0, 0.3);
+    --translucid-02-black: rgba(0, 0, 0, 0.2);
+    --default-text-color : #212529;
+    --lightergrey: #e8e8e8;
+    --lightgrey: #a2a2a2;
+    --darkgrey:#4c4c4c;
+    --darkergrey: #353535;
+    --translucid-03-grey: rgba(126, 126, 126, 0.3);
+    --translucid-05-grey: rgba(126, 126, 126, 0.5);
+    --red:red;
+    --red-delete: #ee3d4d;
+    --dark-red-delete: #9b091c;
+    --blue:blue;
+    --green:green;
+    --yellow:yellow;
+    --blueviolet:blueviolet;
+    --orange:orangered;
+    --magenta:magenta;
+    --deepblue: #4400a5;
+    --bluelagoon: #16A085;
+    --lightbluelagoon: #3ecbad;
+    --light-pink : #fff1f6;
+}

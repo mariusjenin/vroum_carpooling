@@ -1,0 +1,86 @@
+/* CSS OF THE PAGE "SEARCH A TRIP" */
+
+.search_trip_result , .search_trip_box{
+    box-shadow: 0px 0px 10px 0 var(--translucid-02-black);
+    border-radius: 15px;
+    padding-bottom: 10px;
+    transition: 0.2s;
+}
+
+
+.search_trip_result:hover {
+    box-shadow: 0px 0px 10px 0 var(--translucid-03-black);
+}
+
+.submit_search_trip {
+    box-shadow: -5px 5px 10px 0 var(--translucid-02-black);
+    border-radius: 15px 15px 15px 15px;
+    background-color: var(--pink_logo_brand_vroum);
+    font-size: 1.2rem;
+}
+
+.aproximative {
+    color: var(--red);
+}
+
+.title_result{
+    font-size: 1.7rem;
+}
+
+.price_result{
+    font-size: 1.5rem;
+}
+
+.hr_search_trip{
+    width: 50%;
+    border-color: var(--translucid-03-black);
+}
+
+.amount_input_search_trip{
+    border:0;
+    font-weight:bold;
+}
+
+.ui-slider-range{
+    background-color: var(--pink_logo_brand_vroum) !important;
+}
+
+.ui-slider{
+    background-color: var(--light-pink) !important;
+}
+
+.ui-slider-handle{
+    background-color: var(--white) !important;
+}
+
+.add_trip{
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    top:10px;
+    left:10px;
+    z-index: 101;
+    border-radius: 50%;
+}
+
+.picture_driver_trip{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5%;
+}
+
+.lock_picture{
+    width: 30px;
+    height: 30px;
+}
+
+.lock_picture_mini{
+    width: 20px;
+    height: 20px;
+}
+
+.loading_search_trip{
+    height: 100px;
+}
+

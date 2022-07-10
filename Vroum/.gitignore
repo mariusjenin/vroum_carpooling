@@ -1,0 +1,12 @@
+vendor/
+# Run 'composer install' if you want it
+
+.idea/
+
+config/config.php
+uploads/
+
+*.phar
+phpdoc
+.phpdoc/
+docs/

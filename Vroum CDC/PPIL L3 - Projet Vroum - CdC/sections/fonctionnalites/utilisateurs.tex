@@ -1,0 +1,448 @@
+\section{Comptes utilisateur}
+
+La connexion au site est obligatoire pour avoir accès à toutes les fonctionnalités.
+
+\subsection{Inscription}\label{subsec:inscription}
+
+\begin{itemize}
+
+\item \textit{Sommaire d'identification~:}
+
+    \begin{itemize}
+    
+    \item Titre~: Inscription
+    
+    \item Résumé~: Un utilisateur peut s'inscrire et rentrer ses informations personnelles. 
+    
+    \item Date de création~: 14/01/2021
+    
+    \item Dernière mise à jour~: 18/02/2021
+    
+    \item Version~: 1.1
+    
+    \item Acteurs concernés~: Utilisateurs
+    
+    \item Responsables~:
+    
+        \begin{itemize}
+            \item Ghilain Bergeron
+            \item Marius Jenin
+        \end{itemize}
+    
+    \end{itemize}
+
+\item \textit{Description des enchaînements~:}
+
+    \begin{itemize}
+        \item Scénario nominal
+        \begin{enumerate}
+            \item L'utilisateur accède à la page d'inscription
+            \item L'utilisateur saisit ses informations personnelles. Il doit renseigner :
+            \begin{itemize}
+                \item son adresse mail
+                \item un mot de passe
+                \item son nom
+                \item son prénom
+                \item son genre
+                \item s'il possède une voiture
+                \item son numéro de téléphone
+                \item une photo si il le souhaite
+            \end{itemize}
+            \item Le système valide les informations
+            \item Le système crée le nouveau compte de l'utilisateur et redirige l'utilisateur vers la page de connexion
+        \end{enumerate}
+        \item Scénario alternatif
+            \begin{enumerate}[{1{a}.}]\setcounter{enumi}{2}
+                \item Refus de création du compte~: l'email est déjà présent dans la base de données, le mot de passe ne satisfait pas les contraintes de sécurité (6 à 20 caractères, au moins un symbole et une majuscule dedans) ou certaines informations obligatoires ne sont pas renseignées (son nom, son prénom, son genre, s'il possède une voiture, son numéro de téléphone)
+                    \begin{enumerate}[{1.}]\setcounter{enumii}{3}
+                        \item Le système indique les contraintes non satisfaites à l'utilisateur
+                        \item Retour au cas nominal numéro 2. 
+                    \end{enumerate}
+            \end{enumerate}
+        \item Scénario exceptionnel
+    \end{itemize}
+
+\item \textit{Contraintes non fonctionnelles~:}
+
+\item \textit{Pré-conditions~:}
+
+    \begin{itemize}
+        \item L'utilisateur n'est pas connecté
+        \item L'utilisateur est sur l'accueil du site
+    \end{itemize}
+
+\item \textit{Post-conditions~:}
+
+    \begin{itemize}
+        \item L'utilisateur est sur la page de connexion
+    \end{itemize}
+    
+\item \textit{Vues graphiques~:}
+
+Voir image~«~\nameref{fig:Inscription}~»
+
+\end{itemize}
+
+\subsection{Connexion}\label{subsec:connexion}
+
+\begin{itemize}
+
+\item \textit{Sommaire d'identification~:}
+
+    \begin{itemize}
+    
+    \item Titre~: Connexion
+    
+    \item Résumé~: Un utilisateur déjà inscrit peut se connecter avec seulement son email et son mot de passe.
+    
+    \item Date de création~: 14/01/2021
+    
+    \item Dernière mise à jour~: 28/01/2021
+    
+    \item Version~: 1.1
+    
+    \item Acteurs concernés~: Utilisateurs
+    
+    \item Responsables~:
+    
+        \begin{itemize}
+            \item Ghilain Bergeron
+            \item Marius Jenin
+        \end{itemize}
+    
+    \end{itemize}
+
+\item \textit{Description des enchaînements~:}
+
+    \begin{itemize}
+        \item Scénario nominal
+        \begin{enumerate}
+            \item L'utilisateur accède à la page de connexion
+            \item L'utilisateur saisit ses informations personnelles
+            \item Le système valide les informations
+            \item Le système connecte l'utilisateur et le redirige vers l'accueil
+        \end{enumerate}
+        \item Scénario alternatif
+            \begin{enumerate}[{1{a}.}]\setcounter{enumi}{2}
+                \item Echec de la connexion~: l'email n'est pas présent dans la base de données, ou le mot de passe entré n'est pas le bon
+                    \begin{enumerate}[{1.}]\setcounter{enumii}{3}
+                        \item Le système indique à l'utilisateur que son identifiant ou son mot de passe est incorrect
+                        \item Retour au cas nominal numéro 2
+                    \end{enumerate}
+            \end{enumerate}
+        \item Scénario exceptionnel
+    \end{itemize}
+
+\item \textit{Contraintes non fonctionnelles~:}
+
+\item \textit{Pré-conditions~:}
+
+    \begin{itemize}
+        \item L'utilisateur n'est pas connecté
+        \item L'utilisateur est sur l'accueil du site
+    \end{itemize}
+
+\item \textit{Post-conditions~:}
+
+    \begin{itemize}
+        \item L'utilisateur est connecté
+        \item L'utilisateur est sur sa page d'accueil
+    \end{itemize}
+    
+\item \textit{Vues graphiques~:}
+
+Voir image~«~\nameref{fig:Connexion}~»
+
+\end{itemize}
+
+\subsection{Modification de compte}\label{subsec:modification-de-compte}
+
+\begin{itemize}
+
+\item \textit{Sommaire d'identification~:}
+
+    \begin{itemize}
+    
+    \item Titre~: Modification de compte
+    
+    \item Résumé~: Un utilisateur peut consulter son compte s'il est connecté et, s'il le désire, le modifier. 
+    Il pourra modifier toutes ses informations si elles restent valident.
+    Il pourra également choisir s'il veut recevoir des notifications ou non).
+    
+    \item Date de création~: 14/01/2021
+    
+    \item Dernière mise à jour~: 28/01/2021
+    
+    \item Version~: 1.1
+    
+    \item Acteurs concernés~: Utilisateurs
+    
+    \item Responsables~:
+    
+        \begin{itemize}
+            \item Ghilain Bergeron
+            \item Marius Jenin
+        \end{itemize}
+    
+    \end{itemize}
+
+\item \textit{Description des enchaînements~:}
+
+    \begin{itemize}
+        \item Scénario nominal
+        \begin{enumerate}
+            \item L'utilisateur accède à la page de modification de son compte
+            \item Le système complète tous les champs (sauf mot de passe) avec les informations qu'il connaît déjà
+            \item L'utilisateur peut modifier ses informations personnelles
+            \item Le système valide les informations
+            \item Le système effectue les changements
+            \item L'utilisateur est redirigé sur sa page d'accueil
+        \end{enumerate}
+        \item Scénario alternatif
+        \begin{enumerate}[{1{a}.}]\setcounter{enumi}{3}
+                \item Refus de modification du compte~: le mot de passe ne satisfait pas les contraintes de sécurité (6 à 20 caractères, au moins un symbole et une majuscule dedans) ou certaines informations obligatoires ne sont pas renseignées (son nom, son prénom, son genre, s'il possède une voiture, son numéro de téléphone)
+                    \begin{enumerate}[{1.}]\setcounter{enumii}{4}
+                        \item Le système indique les contraintes non satisfaites à l'utilisateur
+                        \item Retour au cas nominal numéro 2. 
+                    \end{enumerate}
+            \end{enumerate}
+        \item Scénario exceptionnel
+    \end{itemize}
+
+\item \textit{Contraintes non fonctionnelles~:}
+
+\item \textit{Pré-conditions~:}
+
+    \begin{itemize}
+        \item Être connecté sur le compte à modifier
+        \item L'utilisateur est sur sa page de profil
+    \end{itemize}
+
+\item \textit{Post-conditions~:}
+
+    \begin{itemize}
+        \item L'utilisateur est sur sa page d'accueil
+    \end{itemize}
+    
+\item \textit{Vues graphiques~:}
+
+Voir image~«~\nameref{fig:Profil}~»
+
+\end{itemize}
+
+\subsection{Suppression de compte}
+
+\begin{itemize}
+
+\item \textit{Sommaire d'identification~:}
+
+    \begin{itemize}
+    
+    \item Titre~: Suppression de compte
+    
+    \item Résumé~: Un utilisateur peut supprimer son compte s'il est connecté. 
+    Toutes les informations le concernant (dans des listes de diffusion par exemple) seront supprimées.
+    Il ne recevra plus de notifications de l'application.
+    
+    \item Date de création~: 14/01/2021
+    
+    \item Dernière mise à jour~: 28/01/2021
+    
+    \item Version~: 1.1
+    
+    \item Acteurs concernés~: Utilisateurs
+    
+    \item Responsables~:
+    
+        \begin{itemize}
+            \item Ghilain Bergeron
+            \item Marius Jenin
+        \end{itemize}
+    
+    \end{itemize}
+
+\item \textit{Description des enchaînements~:}
+
+    \begin{itemize}
+        \item Scénario nominal
+        \begin{enumerate}
+            \item L'utilisateur clique sur "Supprimer son compte"
+            \item Le système ouvre une fenêtre popup pour la suppression de compte
+            \item L'utilisateur confirme son envie de supprimer son compte
+            \item Le système supprime le compte
+            \item L'utilisateur est déconnecté du site et est redirigé sur l'accueil du site
+        \end{enumerate}
+        \item Scénario alternatif
+        \begin{enumerate}[{1{a}.}]\setcounter{enumi}{2}
+            \item Suppression annulée~: l'utilisateur n'a pas confirmé la suppression son compte
+                \begin{enumerate}[{1.}]\setcounter{enumii}{3}
+                    \item Retour au cas nominal numéro 1
+                \end{enumerate}
+        \end{enumerate}
+        \item Scénario exceptionnel
+    \end{itemize}
+
+\item \textit{Contraintes non fonctionnelles~:}
+
+\item \textit{Pré-conditions~:}
+
+    \begin{itemize}
+        \item Être connecté sur le compte à supprimer
+        \item L'utilisateur est sur sa page de profil
+    \end{itemize}
+
+\item \textit{Post-conditions~:}
+
+    \begin{itemize}
+        \item L'utilisateur n'est plus connecté
+        \item L'utilisateur est sur l'accueil du site
+    \end{itemize}
+
+\item \textit{Vues graphiques~:}
+
+Voir image~«~\nameref{fig:Profil}~»
+
+\end{itemize}
+
+\subsection{Récupération d'un mot de passe oublié}
+
+\begin{itemize}
+
+\item \textit{Sommaire d'identification~:}
+
+    \begin{itemize}
+    
+    \item Titre~: Récupération d'un mot de passe oublié
+    
+    \item Résumé~: Un utilisateur peut récupérer son mot de passe s'il l'a oublié.
+    Il peut le faire depuis la page de connexion et d'inscription. Un mail lui sera envoyé pour qu'il puisse réinitialiser son mot de passe.
+    
+    \item Date de création~: 14/01/2021
+    
+    \item Dernière mise à jour~: 31/01/2021
+    
+    \item Version~: 1.1
+    
+    \item Acteurs concernés~: Utilisateurs
+    
+    \item Responsables~:
+    
+        \begin{itemize}
+            \item Ghilain Bergeron
+            \item Marius Jenin
+        \end{itemize}
+    
+    \end{itemize}
+
+\item \textit{Description des enchaînements~:}
+
+    \begin{itemize}
+        \item Scénario nominal
+        \begin{enumerate}
+            \item L'utilisateur accède à la page de connexion
+            \item L'utilisateur clique sur "mot de passe oublié"
+            \item Le système envoie un mail à l'utilisateur (qui a saisi son email) pour réinitialiser son mot de passe
+            \item L'utilisateur rentre son nouveau de passe
+            \item Le système valide le nouveau mot de passe
+            \item L'utilisateur est redirigé vers l'accueil du site
+        \end{enumerate}
+        \item Scénario alternatif
+        \begin{enumerate}[{1{a}.}]\setcounter{enumi}{2}
+            \item Réinitialisation annulée~: l'utilisateur n'a pas saisi son adresse mail
+                \begin{enumerate}[{1.}]\setcounter{enumii}{3}
+                    \item Retour au cas nominal numéro 1
+                \end{enumerate}
+            \setcounter{enumi}{4}
+            \item Changement de mot de passe annulé~: le mot de passe saisi ne satisfait pas les contraintes de sécurité (6 à 20 caractères, contenant au moins un symbole et une majuscule)
+                \begin{enumerate}[{1.}]\setcounter{enumii}{5}
+                    \item Retour au cas nominal numéro 4
+                \end{enumerate}
+        \end{enumerate}
+        \item Scénario exceptionnel
+    \end{itemize}
+
+\item \textit{Contraintes non fonctionnelles~:}
+
+\item \textit{Pré-conditions~:}
+
+    \begin{itemize}
+        \item L'utilisateur n'est pas connecté
+        \item L'utilisateur est sur l'accueil du site
+    \end{itemize}
+    
+\item \textit{Post-conditions~:}
+
+    \begin{itemize}
+        \item Le mot de passe de l'utilisateur est réinitialisé
+        \item L'utilisateur est sur l'accueil du site
+    \end{itemize}
+
+\item \textit{Vues graphiques~:}
+
+Voir image~«~\nameref{fig:Connexion}~»
+
+\end{itemize}
+
+\subsection{Déconnexion}
+
+\begin{itemize}
+
+\item \textit{Sommaire d'identification~:}
+
+    \begin{itemize}
+    
+    \item Titre~: Déconnexion
+    
+    \item Résumé~: Il est souhaitable de pouvoir se déconnecter de son compte. Par exemple, un utilisateur pourrait s'être connecté sur un ordinateur commun (type ordinateur de bibliothèque) et ne veut pas que quiconque puisse accéder à son compte. Il peut alors se déconnecter, rendant l'accès à son compte impossible sur la même machine (à moins d'avoir les identifiants).
+    
+    \item Date de création~: 28/01/2021
+    
+    \item Dernière mise à jour~: 28/01/2021
+    
+    \item Version~: 1.0
+    
+    \item Acteurs concernés~: Utilisateurs
+    
+    \item Responsables~:
+    
+        \begin{itemize}
+            \item Ghilain Bergeron
+            \item Marius Jenin
+        \end{itemize}
+    
+    \end{itemize}
+
+\item \textit{Description des enchaînements~:}
+
+    \begin{itemize}
+        \item Scénario nominal
+        \begin{enumerate}
+            \item L'utilisateur choisit de se déconnecter du site
+            \item Le système déconnecte l'utilisateur
+            \item L'utilisateur est redirigé vers l'accueil du site
+        \end{enumerate}
+        \item Scénario alternatif
+        \item Scénario exceptionnel
+    \end{itemize}
+
+\item \textit{Contraintes non fonctionnelles~:}
+
+\item \textit{Pré-conditions~:}
+
+    \begin{itemize}
+        \item L'utilisateur est connecté
+        \item L'utilisateur est sur sa page de profil
+    \end{itemize}
+
+\item \textit{Post-conditions~:}
+
+    \begin{itemize}
+        \item L'utilisateur n'est plus connecté 
+        \item L'utilisateur est sur l'accueil du site
+    \end{itemize}
+
+\item \textit{Vues graphiques~:}
+
+Voir image~«~\nameref{fig:Profil}~»
+
+\end{itemize}

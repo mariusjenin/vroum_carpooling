@@ -1,0 +1,367 @@
+\section{Liste de diffusions}\label{sec:fonctionnalites-liste_diffusion}
+
+\subsection{Consulter toutes nos listes}\label{subsec:consulter-listes-diffusion}
+
+\begin{itemize}
+
+\item \textit{Sommaire d'identification~:}
+
+    \begin{itemize}
+    
+    \item Titre~: Consulter toutes nos listes
+    
+    \item Résumé~: Un utilisateur peut consulter toutes les listes de diffusions qu'il a fait et les sélectionner pour les afficher en détails.
+    
+    \item Date de création~: 14/01/2021
+    
+    \item Dernière mise à jour~: 31/01/2021
+    
+    \item Version~: 1.1
+    
+    \item Acteurs concernés~: Utilisateurs
+    
+    \item Responsables~: 
+    \begin{itemize}
+        \item Antoine Gachenot
+    \end{itemize}
+    
+    \end{itemize}
+
+\item \textit{Description des enchaînements~:}
+\begin{itemize}
+\item Scénario nominal
+    \begin{enumerate}
+       \item L'utilisateur sélectionne le bouton "Mes listes d'amis"
+       \item Le système affiche toutes les listes d'amis de l'utilisateur sur la page "Mes listes d'amis"
+    \end{enumerate}
+    \item Scénario alternatif
+    \item Scénario exceptionnel
+\end{itemize}
+\item \textit{Contraintes non fonctionnelles~:}
+
+\item \textit{Pré-conditions~:}
+
+    \begin{itemize}
+        \item Être connecté
+    \end{itemize}
+
+\item \textit{Post-conditions~:}
+    \begin{itemize}
+        \item L'utilisateur est sur la page "Mes listes d'amis"
+    \end{itemize}
+    
+    \item \textit{Vues graphiques~:}
+    
+    Voir images~«~\nameref{fig:Accueil - Connecté}~» et 
+«~\nameref{fig:Mes listes d'amis}~»
+
+\end{itemize}
+
+\subsection{Créer une liste}\label{subsec:creer-une-liste}
+
+\begin{itemize}
+
+\item \textit{Sommaire d'identification~:}
+
+    \begin{itemize}
+    
+    \item Titre~: Créer une liste
+    
+    \item Résumé~: Un utilisateur peut créer une liste de diffusion pour envoyer des trajets privées à différents utilisateurs. La liste sera identifiée grâce à un nom. 
+    
+    \item Date de création~: 14/01/2021
+    
+    \item Dernière mise à jour~: 31/01/2021
+    
+    \item Version~: 1.1
+    
+    \item Acteurs concernés~: Utilisateurs
+    
+    \item Responsables~:
+    \begin{itemize}
+        \item Antoine Gachenot
+        \item Marius Jenin
+    \end{itemize}
+    
+    \end{itemize}
+
+\item \textit{Description des enchaînements~:}
+\begin{itemize}
+\item Scénario nominal
+\begin{enumerate}
+       \item L'utilisateur selectionne le bouton "Nouvelle liste"
+       \item L'utilisateur saisit le nom de la liste
+       \item L'utilisateur valide la modification de la liste en cliquant sur "Valider"
+       \item Le système créé la liste et redirige l'utilisateur sur la page "Mes listes d'amis"
+       
+    \end{enumerate}
+    \item Scénario alternatif
+    
+        \begin{enumerate}[{1{a}.}]\setcounter{enumi}{1}
+            \item Deuxième action possible : Ajouter une personne
+            \begin{enumerate}[{1.}]\setcounter{enumii}{2}
+                \item L'utilisateur saisit l'adresse mail de l'utilisateur qu'il souhaite ajouter
+                \item L'utilisateur ajoute l'email qu'il a rentré
+                \item Le système vérifie que l'adresse mail correspond bien à un utilisateur 
+                \item Le système ajoute cet utilisateur à la liste des emails 
+                \item Retour à l'étape 2. du scénario nominal
+            \end{enumerate}
+        \end{enumerate}
+        \begin{enumerate}[{1{b}.}]\setcounter{enumi}{1}
+            \item Troisième action possible : Retirer une personne
+            \begin{enumerate}[{1.}]\setcounter{enumii}{2}
+                \item L'utilisateur clique sur le bouton "Supprimer" de l'utilisateur qu'il souhaite supprimer
+                \item Le système supprime l'email de la personne correspondante de la liste des emails affichée
+                \item Retour à l'étape 2. du scénario nominal
+            \end{enumerate}
+        \end{enumerate}
+        
+        \begin{enumerate}[{1{a}.}]\setcounter{enumi}{3}
+            \item Refus de création de liste : une liste possédant le nom donné existe déjà
+            \begin{enumerate}[{1.}]\setcounter{enumii}{4}
+                \item Le système indique qu'une liste possédant ce nom existe déjà
+                \item Retour au cas nominal numéro 2
+            \end{enumerate}
+        \end{enumerate}
+    \item Scénario exceptionnel
+\end{itemize}
+\item \textit{Contraintes non fonctionnelles~:}
+
+\item \textit{Pré-conditions~:}
+
+    \begin{itemize}
+        \item Être connecté
+        \item L'utilisateur est sur la page "Mes listes d'amis"
+    \end{itemize}
+
+\item \textit{Post-conditions~:}
+    \begin{itemize}
+        \item La liste de diffusion créée est visible sur la page "Mes listes d'amis"
+        \item L'utilisateur est sur la page "Mes listes d'amis"
+\end{itemize}
+
+\item \textit{Vues graphiques~:}
+
+Voir images~«~\nameref{fig:Mes listes d'amis}~» et 
+«~\nameref{fig:Créer une liste}~»
+
+\end{itemize}
+
+\subsection{Modifier une liste}\label{subsec:modifier-une-liste}
+
+\begin{itemize}
+
+\item \textit{Sommaire d'identification~:}
+
+    \begin{itemize}
+    
+    \item Titre~: Modifier une liste
+    
+    \item Résumé~: Un utilisateur peut modifier une liste qu'il a déjà créé. Il peut changer le nom et ajouter ou retirer des personnes.
+    
+    \item Date de création~: 02/02/2021
+    
+    \item Dernière mise à jour~: 02/02/2021
+    
+    \item Version~: 1.1
+    
+    \item Acteurs concernés~: Utilisateurs
+    
+    \item Responsables~: 
+    \begin{itemize}
+        \item Marius Jenin
+    \end{itemize}
+    
+    \end{itemize}
+
+
+\item \textit{Description des enchaînements~:}
+\begin{itemize}
+\item Scénario nominal
+\begin{enumerate}
+       \item L'utilisateur sélectionne la liste qu'il veut modifier
+       \item L'utilisateur modifie le nom de sa liste
+       \item L'utilisateur valide la modification de la liste en cliquant sur "Valider"
+       \item Le système modifie la liste et redirige l'utilisateur sur la page "Mes listes d'amis"
+       
+    \end{enumerate}
+    \item Scénario alternatif
+    
+        \begin{enumerate}[{1{a}.}]\setcounter{enumi}{1}
+            \item Deuxième action possible : Ajouter une personne
+            \begin{enumerate}[{1.}]\setcounter{enumii}{2}
+                \item L'utilisateur saisit l'adresse mail de l'utilisateur qu'il souhaite ajouter
+                \item L'utilisateur ajoute l'email qu'il a rentré
+                \item Le système vérifie que l'adresse mail correspond bien à un utilisateur 
+                \item Le système ajoute cet utilisateur à la liste des emails 
+                \item Retour à l'étape 2. du scénario nominal
+            \end{enumerate}
+        \end{enumerate}
+        \begin{enumerate}[{1{b}.}]\setcounter{enumi}{1}
+            \item Troisième action possible : Retirer une personne
+            \begin{enumerate}[{1.}]\setcounter{enumii}{2}
+                \item L'utilisateur clique sur le bouton "Supprimer" de l'utilisateur qu'il souhaite supprimer
+                \item Le système supprime l'email de la personne correspondante de la liste des emails affichés
+                \item Retour à l'étape 2. du scénario nominal
+            \end{enumerate}
+        \end{enumerate}
+        
+        \begin{enumerate}[{1{a}.}]\setcounter{enumi}{3}
+            \item Refus de modification de liste : une liste possédant le nouveau nom donné existe déjà
+            \begin{enumerate}[{1.}]\setcounter{enumii}{4}
+                \item Le système indique qu'une liste possédant ce nouveau nom existe déjà
+                \item Retour au cas nominal numéro 2
+            \end{enumerate}
+        \end{enumerate}
+        
+    \item Scénario exceptionnel
+\end{itemize}
+\item \textit{Contraintes non fonctionnelles~:}
+
+\item \textit{Pré-conditions~:}
+
+    \begin{itemize}
+        \item Être connecté
+        \item L'utilisateur est sur la page "Mes listes d'amis"
+    \end{itemize}
+
+\item \textit{Post-conditions~:}
+    \begin{itemize}
+        \item La liste de diffusion créée est visible sur la page "Mes listes d'amis"
+        \item L'utilisateur est sur la page "Mes listes d'amis"
+\end{itemize}
+
+\item \textit{Vues graphiques~:}
+
+Voir images~«~\nameref{fig:Mes listes d'amis}~» et 
+«~\nameref{fig:Créer une liste}~»
+
+\end{itemize}
+
+\subsection{Supprimer une liste}\label{subsec:supprimer-une-liste}
+
+\begin{itemize}
+
+\item \textit{Sommaire d'identification~:}
+
+    \begin{itemize}
+    
+    \item Titre~: Supprimer une liste
+    
+    \item Résumé~: Un utilisateur peut supprimer une liste de diffusion qui ne lui convient pas.
+    
+    \item Date de création~: 14/01/2021
+    
+    \item Dernière mise à jour~: 31/01/2021
+    
+    \item Version~: 1.1
+    
+    \item Acteurs concernés~: Utilisateurs
+    
+    \item Responsables~: 
+    \begin{itemize}
+        \item Antoine Gachenot
+    \end{itemize}
+    
+    \end{itemize}
+
+\item \textit{Description des enchaînements~:}
+\begin{itemize}
+\item Scénario nominal
+\begin{enumerate}
+       \item L'utilisateur clique sur "Supprimer la liste d'amis" correspondant à la liste d'amis
+       \item Le système ouvre une fenêtre popup pour confirmer la suppression
+       \item L'utilisateur confirme la suppression
+       \item Le système supprime cette liste d'amis
+    \end{enumerate}
+    \item Scénario alternatif
+        \begin{enumerate}[{1{a}.}]\setcounter{enumi}{3}
+            \item L'utilisateur annule la suppression de l'ami
+            \begin{enumerate}[{1.}]\setcounter{enumii}{4}
+                \item Fin du scénario alternatif
+            \end{enumerate}
+        \end{enumerate}
+    \item Scénario exceptionnel
+\end{itemize}
+
+\item \textit{Contraintes non fonctionnelles~:}
+
+\item \textit{Pré-conditions~:}
+
+    \begin{itemize}
+        \item Être connecté
+        \item La liste de diffusion existe et est visible sur la page "Mes listes d'amis" de l'utilisateur
+        \item L'utilisateur est sur la page "Mes listes d'amis"
+    \end{itemize}
+
+\item \textit{Post-conditions~:}
+    \begin{itemize}
+        \item La liste d'amis n'est plus visible depuis la page "Mes listes d'amis" de l'utilisateur        \item L'utilisateur est sur la page "Mes listes d'amis"
+    \end{itemize}
+    
+    \item \textit{Vues graphiques~:}
+    
+    Voir image~«~\nameref{fig:Mes listes d'amis}~»
+
+
+\end{itemize}
+
+% \subsection{Consulter une liste}\label{subsec:consulter-une-liste}
+
+% \begin{itemize}
+
+% \item \textit{Sommaire d'identification~:}
+
+%     \begin{itemize}
+    
+%     \item Titre~: Consulter une liste
+    
+%     \item Un utilisateur peut consulter une liste de diffusion spécifique et voir tous les utilisateurs qu'il a ajouté dedans.
+    
+%     \item Date de création~: 14/01/2021
+    
+%     \item Dernière mise à jour~: 31/01/2021
+    
+%     \item Version~: 1.1
+    
+%     \item Acteurs concernés~: Utilisateurs
+    
+%     \item Responsables~: 
+%     \begin{itemize}
+%         \item Antoine Gachenot
+%     \end{itemize}
+    
+%     \end{itemize}
+
+% \item \textit{Description des enchaînements~:}
+% \begin{itemize}
+% \item Scénario nominal
+% \begin{enumerate}
+%       \item L'utilisateur clique sur la liste d'amis qu'il souhaite consulter
+%       \item Le système redirige l'utilisateur sur la page de la liste d'amis
+%     \end{enumerate}
+%     \item Scénario alternatif
+%     \item Scénario exceptionnel
+% \end{itemize}
+
+% \item \textit{Contraintes non fonctionnelles~:}
+
+% \item \textit{Pré-conditions~:}
+
+%     \begin{itemize}
+%         \item Être connecté
+%         \item La liste de diffusion existe et est visible sur la page "Mes listes d’amis" de l’utilisateur
+%         \item L'utilisateur est sur la page "Mes listes d'amis"
+%     \end{itemize}
+
+% \item \textit{Post-conditions~:}
+%     \begin{itemize}
+%         \item L'utilisateur est sur la page correspondante à la liste d'amis qu'il souhaite consulter
+%     \end{itemize}
+    
+%     \item \textit{Vues graphiques~:}
+    
+%     Voir images~«~\nameref{fig:Mes listes d'amis}~» et 
+% «~\nameref{fig:Créer une liste}~»
+
+% \end{itemize}

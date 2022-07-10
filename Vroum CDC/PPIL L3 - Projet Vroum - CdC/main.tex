@@ -1,0 +1,60 @@
+\documentclass[a4paper, 12pt, UTF8, oneside]{report}
+
+\input{dependances}
+\input{configuration}
+
+\newcommand{\thetitle}{ Vroum}
+\title{\thetitle}
+\author{%
+G. Bergeron
+
+A. Gachenot
+
+M. Jenin
+
+A. Larcher
+
+P. Marty
+
+Q. Bastian
+}
+
+\renewcommand*\contentsname{Sommaire}
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
+\fancyhead[L]{\textsc{\thetitle\ -- \leftmark}}
+\fancyhead[R]{\textsc{Page \thepage}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\pagenumbering{gobble}
+
+\thispagestyle{empty}
+\input{sections/cover}
+
+% An empty page
+\newpage
+\thispagestyle{empty}
+\null{}
+
+\newpage
+\pagenumbering{arabic}
+\thispagestyle{empty}
+{\let\cleardoublepage=\clearpage%
+\tableofcontents}
+
+\input{sections/introduction}
+
+\clearpage 
+
+\input{sections/fonctionnalites}
+
+\clearpage 
+
+\input{sections/vues_graphiques}
+
+
+\end{document}

@@ -1,0 +1,139 @@
+\section{Notifications}\label{sec:fonctionnalites-notifications}
+
+Les notifications permettent aux utilisateurs qui ne lisent pas leurs mails (ou aux utilisateurs qui ne souhaitent pas recevoir de mails) d'être quand même avertis de changements pouvant les concerner.
+
+\subsection{Consulter nos notifications}\label{subsec:consulter-nos-notifications}
+
+\begin{itemize}
+
+\item \textit{Sommaire d'identification~:}
+
+    \begin{itemize}
+    
+    \item Titre~: Consulter nos notifications
+    
+    \item Résumé~: Un utilisateur peut accumuler les notifications s'il ne s'est pas connecté depuis un bout de temps.
+    Il est donc nécessaire de pouvoir consulter toutes nos notifications, afin de se tenir à jour des nouvelles nous concernant.
+    
+    \item Date de création~: 14/01/2021
+    
+    \item Dernière mise à jour~: 28/01/2021
+    
+    \item Version~: 1.1
+    
+    \item Acteurs concernés~: Utilisateurs
+    
+    \item Responsables~:
+
+        \begin{itemize}
+            \item Ghilain Bergeron
+        \end{itemize}
+    
+    \end{itemize}
+
+\item \textit{Description des enchaînements~:}
+
+    \begin{itemize}
+        \item Scénario nominal
+        \begin{enumerate}
+            \item L'utilisateur accède à sa boîte de réception
+            \item Le système récupère et affiche les expéditeurs des notifications reçues
+            \item L'utilisateur clique sur un expéditeur pour avoir plus de détails sur les notifications reçues
+        \end{enumerate}
+        \item Scénario alternatif
+        \item Scénario exceptionnel
+    \end{itemize}
+
+\item \textit{Contraintes non fonctionnelles~:}
+
+    \begin{itemize}
+        \item Temps de réponse inférieur à 10 secondes
+    \end{itemize}
+
+\item \textit{Pré-conditions~:}
+
+    \begin{itemize}
+        \item L'utilisateur est connecté
+        \item L'utilisateur se trouve sur sa page d'accueil
+    \end{itemize}
+
+\item \textit{Post-conditions~:}
+
+    \begin{itemize}
+        \item Toutes les notifications non lues sont marquées comme lues lors de la sortie de la boîte de réception.
+    \end{itemize}
+    
+\item \textit{Vues graphiques~:}
+
+Voir images~«~\nameref{fig:Mes notifications - Utilisateurs}~» et «~\nameref{fig:Mes notifications - Notifications}~»
+
+\end{itemize}
+
+\subsection{Supprimer une notification}\label{subsec:supprimer-une-notification}
+
+\begin{itemize}
+
+\item \textit{Sommaire d'identification~:}
+
+    \begin{itemize}
+    
+    \item Titre~: Supprimer une notification
+    
+    \item Résumé~: Les notifications peuvent s'accumuler rapidement, et ainsi prendre de la place inutilement.
+          Il est donc nécessaire de pouvoir supprimer de vieilles notifications (ou des notifications lues) afin de ne pas trop polluer sa boîte de réception.
+    
+    \item Date de création~: 14/01/2021
+    
+    \item Dernière mise à jour~: 28/01/2021
+    
+    \item Version~: 1.1
+    
+    \item Acteurs concernés~: Utilisateurs
+    
+    \item Responsables~:
+    
+        \begin{itemize}
+            \item Ghilain Bergeron
+        \end{itemize}
+    
+    \end{itemize}
+
+\item \textit{Description des enchaînements~:}
+
+    \begin{itemize}
+        \item Scénario nominal
+        \begin{enumerate}
+            \item L'utilisateur accède à sa boîte de réception
+            \item Le système récupère et affiche les expéditeurs des notifications reçues
+            \item L'utilisateur clique sur un expéditeur pour avoir plus de détails sur les notifications
+            \item L'utilisateur choisit une notification à supprimer
+            \item Le système supprime la notification sélectionnée par l'utilisateur
+        \end{enumerate}
+        \item Scénario alternatif
+        \item Scénario exceptionnel
+    \end{itemize}
+
+\item \textit{Contraintes non fonctionnelles~:}
+
+    \begin{itemize}
+        \item Temps de réponse inférieur à 1 seconde par notification supprimée
+    \end{itemize}
+
+\item \textit{Pré-conditions~:}
+
+    \begin{itemize}
+        \item L'utilisateur est connecté
+        \item L'utilisateur se trouve sur la page de sa boîte de réception
+    \end{itemize}
+
+\item \textit{Post-conditions~:}
+
+    \begin{itemize}
+        \item Les notifications sélectionnées ne figurent plus dans la boîte de réception
+    \end{itemize}
+    
+\item \textit{Vues graphiques~:}
+
+Voir image~«~\nameref{fig:Mes notifications - Notifications}~»
+
+\end{itemize}

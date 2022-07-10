@@ -1,0 +1,13 @@
+/* SHARED CSS FOR THE PAGE "CREATE A TRIP" & "SEARCH A TRIP" */
+
+.intermediate_city{
+    font-family: Coolvetica, sans-serif;
+    font-size: 1rem;
+    border-radius: 20px;
+    border : solid 1px var(--translucid-02-black);
+    transition : 0.1s box-shadow;
+}
+
+.intermediate_city:hover{
+    box-shadow: 0px 0px 7px 0 var(--translucid-02-black);
+}

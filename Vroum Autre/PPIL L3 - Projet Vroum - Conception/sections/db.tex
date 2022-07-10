@@ -1,0 +1,37 @@
+% \section{Base de données}\label{sec:db}
+\chapter{Base de données}
+
+\section*{Modèle de données}
+
+\begin{itemize}
+
+\item \texttt{Note(\underline{idNote}, \textit{\#noté, \#notant, \#trajet}, notation)}
+
+\item \texttt{Notification(\underline{idNotif}, \textit{\#destinataire, \#expéditeur, \#trajet}, texte, lue, type)}
+
+\item \texttt{Utilisateur(\underline{email}, hash, nom, prenom, genre, voiture, tel, photo)}
+
+\item \texttt{ListeUtilisateur(\underline{idListe}, nom, \textit{\#createur, \#idTrajet})}
+
+\item \texttt{Trajet(\underline{\#idTrajet}, dateD, \textit{\#conducteur}, \textit{\#idListe}, villeD, villeA, prix, placeMax, precisionsRDV, precisionsContraintes)}
+
+\item \texttt{appartientAListe(\underline{\textit{\#idListe, \#email}})}
+
+\item \texttt{participeATrajet(\underline{\textit{\#idTrajet, \#participant}})}
+
+\item \texttt{candidateATrajet(\underline{\textit{\#idTrajet, \#candidat}})}
+
+\end{itemize}
+
+\section*{Notes concernant le modèle de données}
+
+\begin{itemize}
+
+\item \texttt{\underline{attribut}}~: clé primaire
+
+\item \texttt{\textit{\#attribut}}~: clé étrangère
+
+\item «~\texttt{expediteur}~», «~\texttt{destinataire}~», «~\texttt{createur}~», «~\texttt{candidat}~», «~\texttt{participant}~» et «~\texttt{conducteur}~» sont des \texttt{Utilisateur(email)}
+
+
+\end{itemize}

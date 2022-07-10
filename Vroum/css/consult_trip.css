@@ -1,0 +1,43 @@
+/* CSS OF THE PAGE "CONSULT A TRIP" */
+
+.consult_trip_submit {
+    box-shadow: -5px 5px 10px 0 var(--translucid-02-black);
+    border-radius: 15px 15px 15px 15px;
+    background-color: var(--pink_logo_brand_vroum);
+    font-size: 1.2rem;
+}
+
+.shadowed_box_border_radius {
+    box-shadow: 0px 0px 10px 0 var(--translucid-02-black);
+    border-radius: 15px;
+}
+
+.grey_box_border_radius {
+    background-color: var(--lightergrey);
+    border-radius: 15px;
+}
+
+.picture_driver_trip{
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 5%;
+    border: solid 1px var(--lightergrey);
+}
+
+.rate_carpooler_area{
+    background-color: var(--lightgrey);
+    border-radius: 5px 5px 20px 20px;
+    z-index: 10;
+    top:45%
+}
+
+.star_rating{
+    cursor: pointer;
+}
+
+.star_glow{
+    text-shadow: 0px 0px 10px white;
+    color:var(--default-text-color);
+}
+

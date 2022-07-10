@@ -1,0 +1,604 @@
+\section{Gestion de trajets}
+
+\subsection{Créer un trajet}\label{subsec:creer-un-trajet}
+
+\begin{itemize}
+
+\item \textit{Sommaire d'identification:}
+
+\begin{itemize}
+
+\item Titre~: Créer un trajet
+
+\item Résumé~: Un utilisateur peut créer un trajet, en renseignant différentes informations.
+
+\item Date de création~: 14/01/2021
+
+\item Dernière mise à jour~: 18/02/2021
+
+\item Version~: 1.1
+
+\item Acteurs concernés~: Utilisateurs
+
+\item Responsables~:
+\begin{itemize}
+            \item Pierre Marty
+            \item Alexis Larcher
+        \end{itemize}
+
+\end{itemize}
+
+\item \textit{Description des enchaînements:}
+
+\begin{itemize}
+    \item Scénario nominal
+    \begin{enumerate}
+        \item L'utilisateur accède à la page "Rechercher un trajet"
+        \item L'utilisateur sélectionne le bouton "Proposer un trajet"
+        \item L'utilisateur saisit les informations du trajet. Il doit renseigner :
+        \begin{itemize}
+            \item le lieu de départ
+            \item le lieu d'arrivée
+            \item la date de départ
+            \item l'heure de départ
+            \item le prix
+            \item le nombre maximum de personne pouvant participer
+            \item si le trajet est public (accessible à tous) ou privé (accessible seulement aux membres d'une liste de diffusion) 
+        \end{itemize} Il peut aussi préciser les étapes intermédiaires du trajet, ainsi que des contraintes et des informations supplémentaires.
+        
+        Voir section~«~\ref{sec:fonctionnalites-liste_diffusion}~\nameref{sec:fonctionnalites-liste_diffusion}~».
+        \item L'utilisateur valide la création du trajet en cliquant sur le bouton "Créer le trajet"
+        \item Le système vérifie que les champs soient remplis correctement
+        \item Le système créé le trajet et redirige l'utilisateur vers la page ou il était
+    \end{enumerate}
+    \item Scénario alternatif
+      \begin{enumerate}[{1{a}.}]\setcounter{enumi}{4}
+             \item Refus de création de trajet : certaines informations obligatoire ne sont pas renseignées (ville de départ, ville d'arrivée, heure et date de départ, nombre de place, prix) ou certaines informations sont absurdes (le prix doit être un réel positif, le nombre de place doit être un entier naturel, la date doit être au bon format, l'heure doit être un entier entre 0 et 23 inclut, les minutes doivent être un entier entre 0 et 59 inclut)
+            \begin{enumerate}[{1.}]\setcounter{enumii}{5}
+                \item Le système indique les contraintes non satisfaites à l'utilisateur
+                \item Retour au cas nominal numéro 3
+            \end{enumerate}
+        \end{enumerate}
+    
+    \item Scénario exceptionnel
+\end{itemize}
+
+\item \textit{Contraintes non fonctionnelles:}
+
+\item \textit{Pré-conditions~:}
+
+    \begin{itemize}
+        \item Être connecté
+    \end{itemize}
+
+\item \textit{Post-conditions~:}
+        \begin{itemize}
+        \item Le trajet est créé et visible dans la partie "Mes trajets" de l'utilisateur
+        \item L'utilisateur est sur la page ou il était avant
+    \end{itemize}
+    
+\item \textit{Vues graphiques~:}
+
+Voir images~«~\nameref{fig:Accueil - Connecté}~» et 
+«~\nameref{fig:Proposer un trajet}~»
+
+\end{itemize}
+
+\subsection{Rechercher un trajet}\label{subsec:rechercher-un-trajet}
+
+\begin{itemize}
+
+\item \textit{Sommaire d'identification:}
+
+\begin{itemize}
+
+\item Titre~: Rechercher un trajet
+
+\item Résumé~: Un utilisateur peut rechercher un trajet selon les critères qu'il souhaite, comme le lieu de départ par exemple.
+
+\item Date de création~: 14/01/2021
+
+\item Dernière mise à jour~: 28/01/2021
+
+\item Version~: 1.1
+
+\item Acteurs concernés~: Utilisateurs
+
+\item Responsables~:
+\begin{itemize}
+            \item Pierre Marty
+            \item Alexis Larcher
+        \end{itemize}
+
+\end{itemize}
+
+\item \textit{Description des enchaînements:}
+
+\begin{itemize}
+    \item Scénario nominal
+    \begin{enumerate}
+        \item L'utilisateur accède à la page "Rechercher un trajet"
+        \item L'utilisateur saisit des informations sur le trajet qu'il recherche
+        \item L'utilisateur valide la recherche en cliquant sur le bouton "Valider"
+        \item Le système vérifie que les champs soient remplis correctement
+        \item Le système affiche tout les trajets correspondants aux critères de l'utilisateur où il reste des places 
+    \end{enumerate}
+    \item Scénario alternatif
+    \begin{enumerate}[{1{a}.}]\setcounter{enumi}{3}
+            \item Erreur dans la saisie des informations~: certaines informations sont absurdes (Le prix doit être un réel positif, les heures doivent être un entier compris entre 0 et 23 inclut, et les minutes doivent être un entier compris entre 0 et 59)
+            \begin{enumerate}[{1.}]\setcounter{enumii}{4}
+                \item Le système indique les contraintes non satisfaites à l'utilisateur
+                \item Retour au cas nominal numéro 3
+            \end{enumerate}
+        \end{enumerate}
+    
+    
+    \item Scénario exceptionnel
+\end{itemize}
+
+\item \textit{Contraintes non fonctionnelles:}
+
+\item \textit{Pré-conditions~:}
+
+    \begin{itemize}
+        \item Être connecté
+    \end{itemize}
+
+\item \textit{Post-conditions~:}
+\begin{itemize}
+        \item L'utilisateur est sur la page "Rechercher un trajet"
+    \end{itemize}
+    
+    \item \textit{Vues graphiques~:}
+
+Voir image~«~\nameref{fig:Rechercher un trajet}~»
+
+\end{itemize}
+
+
+\subsection{Consulter un trajet}\label{subsec:consulter-un-trajet}
+
+\begin{itemize}
+
+\item \textit{Sommaire d'identification:}
+
+\begin{itemize}
+
+\item Titre~: Consulter un trajet
+
+\item Résumé~: Un utilisateur peut consulter un trajet avec ses différents paramètres, tels que l'heure de départ, les autres passagers qui seront présents, ou la moyenne du conducteur par exemple.
+
+\item Date de création~: 14/01/2021
+
+\item Dernière mise à jour~: 28/01/2021
+
+\item Version~: 1.1
+
+\item Acteurs concernés~: Utilisateurs
+
+\item Responsables~:
+\begin{itemize}
+            \item Pierre Marty
+            \item Alexis Larcher
+        \end{itemize}
+
+\end{itemize}
+
+\item \textit{Description des enchaînements:}
+
+\begin{itemize}
+    \item Scénario nominal
+    \begin{enumerate}
+        \item L'utilisateur clique sur le trajet qu'il souhaite consulter
+        \item Le système redirige l'utilisateur sur la page du trajet
+    \end{enumerate}
+    \item Scénario alternatif
+    \item Scénario exceptionnel
+\end{itemize}
+
+\item \textit{Contraintes non fonctionnelles:}
+
+\item \textit{Pré-conditions~:}
+
+    \begin{itemize}
+        \item Être connecté
+        \item L'utilisateur est sur une page ou il peut voir des trajets (la page "Rechercher un trajet" ou sur la page "Mes trajets" par exemple)
+    \end{itemize}
+
+\item \textit{Post-conditions~:}
+     \begin{itemize}
+        \item L'utilisateur est sur la page correspondant au trajet qu'il souhaite consulter
+    \end{itemize}
+    
+    \item \textit{Vues graphiques~:}
+    
+    Voir image~«~\nameref{fig:Consulter un trajet}~»
+
+\end{itemize}
+
+
+\subsection{Répondre à un trajet}\label{subsec:repondre-a-un-trajet}
+
+\begin{itemize}
+
+\item \textit{Sommaire d'identification:}
+
+\begin{itemize}
+
+\item Titre~: Répondre à un trajet
+
+\item Résumé~: Un utilisateur peut répondre à une offre pour faire partie du trajet.
+Il peut ajouter un message dans sa réponse.
+Le créateur reçoit alors une notification (avec le message si il y en a un).
+Il peut alors décider d'accepter ou de refuser la réponse 
+
+Voir section~«~\ref{sec:fonctionnalites-notifications}~\nameref{sec:fonctionnalites-notifications}~».
+
+\item Date de création~: 14/01/2021
+
+\item Dernière mise à jour~: 18/02/2021
+
+\item Version~: 1.1
+
+\item Acteurs concernés~: Utilisateurs
+
+\item Responsables~:
+\begin{itemize}
+            \item Pierre Marty
+            \item Alexis Larcher
+        \end{itemize}
+
+\end{itemize}
+
+\item \textit{Description des enchaînements:}
+
+\begin{itemize}
+    \item Scénario nominal
+    \begin{enumerate}
+        \item L"utilisateur peut écrire un message qui sera envoyé au créateur du trajet
+        \item L"utilisateur clique sur le bouton "Participer au trajet"
+        \item Le système vérifie qu'il a encore des places disponibles pour le trajet (en cas de deux personnes présentes sur le trajet en simultané)
+        \item Le système envoie une notification au créateur du trajet, avec le message qu'a écrit l'utilisateur à l'étape (1.) si il y en a un
+        \item Le système redirige l'utilisateur vers la page du trajet
+    \end{enumerate}
+    \item Scénario alternatif
+     \begin{enumerate}[{1{a}.}]\setcounter{enumi}{2}
+            \item Un autre utilisateur s'est rajouté au trajet pendant que l'utilisateur du cas est en train de consulter le trajet. Le trajet est maintenant plein.
+            \begin{enumerate}[{1.}]\setcounter{enumii}{3}
+                \item Le système renvoie l'utilisateur à la page de recherche de trajets
+                \item Fin du scénario alternatif
+            \end{enumerate}
+        \end{enumerate}
+        
+    \item Scénario exceptionnel
+\end{itemize}
+
+\item \textit{Contraintes non fonctionnelles:}
+
+\item \textit{Pré-conditions~:}
+
+    \begin{itemize}
+        \item Être connecté
+        \item L'utilisateur est sur la page du trajet correspondant
+        \item L'utilisateur n'est pas déjà inscrit au trajet
+    \end{itemize}
+
+\item \textit{Post-conditions~:}
+    \begin{itemize}
+            \item Une notification correspondant à la réponse de l'utilisateur est ajouté dans les notifications du créateur du trajet
+        \item L'utilisateur est sur la page du trajet
+        \end{itemize}
+        
+        \item \textit{Vues graphiques~:}
+        
+        Voir image~«~\nameref{fig:Consulter un trajet}~»
+
+\end{itemize}
+
+
+\subsection{Annuler une réponse à un trajet}\label{subsec:annuler-reponse-trajet}
+
+\begin{itemize}
+
+\item \textit{Sommaire d'identification:}
+
+\begin{itemize}
+
+\item Titre~: Annuler une réponse à un trajet
+
+\item Résumé~: Un utilisateur qui a répondu à un trajet peut annuler sa réponse, si le trajet ne démarre pas dans moins de 24h. 
+Une notification est alors envoyé au créateur du trajet.
+
+Voir section~«~\ref{sec:fonctionnalites-notifications}~\nameref{sec:fonctionnalites-notifications}~».
+
+\item Date de création~: 14/01/2021
+
+\item Dernière mise à jour~: 18/02/2021
+
+\item Version~: 1.1
+
+\item Acteurs concernés~: Utilisateurs
+
+\item Responsables~:
+\begin{itemize}
+            \item Pierre Marty
+            \item Alexis Larcher
+        \end{itemize}
+
+\end{itemize}
+
+\item \textit{Description des enchaînements:}
+
+\begin{itemize}
+    \item Scénario nominal
+    \begin{enumerate}
+        \item L'utilisateur clique sur "Supprimer le trajet" (seulement présent pour les trajet qui démarre dans plus de 24h)
+        \item Le système demande confirmation à l'utilisateur avec une fenêtre popup
+        \item L'utilisateur confirme la suppression
+        \item Le système désinscrit l'utilisateur du trajet et envoie une notification au créateur du trajet
+    \end{enumerate}
+    \item Scénario alternatif
+    \begin{enumerate}[{1{a}.}]\setcounter{enumi}{2}
+            \item L'utilisateur annule sa demande de désinscription au trajet
+            \begin{enumerate}[{1.}]\setcounter{enumii}{3}
+                \item Fin du scénario alternatif
+            \end{enumerate}
+            \item Suppression du trajet impossible~: l'utilisateur à cliqué sur le bouton "Supprimer le trajet" plus de 24h avant que le le trajet commence, mais il n'appuie sur la confirmation de la fenêtre popup que moins de 24h avant que le trajet ne commence.
+            \begin{enumerate}[{1.}]\setcounter{enumii}{4}
+                \item Fin du scénario alternatif
+            \end{enumerate}
+        \end{enumerate}
+    \item Scénario exceptionnel
+\end{itemize}
+
+\item \textit{Contraintes non fonctionnelles:}
+
+\item \textit{Pré-conditions~:}
+\begin{itemize}
+        \item Être connecté
+        \item L'utilisateur est sur la page "Mes trajets"
+        \item L'utilisateur est inscrit au trajet
+    \end{itemize}
+
+\item \textit{Post-conditions~:}
+\begin{itemize}
+        \item L'utilisateur est désinscrit du trajet
+        \item Le trajet n'est plus visible depuis la page "Mes trajets" de l'utilisateur
+        \item L'utilisateur est sur la page "Mes trajets"
+    \end{itemize}
+    
+    \item \textit{Vues graphiques~:}
+    
+    Voir image~«~\nameref{fig:Mes trajets}~»
+
+\end{itemize}
+
+
+\subsection{Noter un utilisateur après un trajet}\label{subsec:noter-utilisateur-apres-trajet}
+
+\begin{itemize}
+
+\item \textit{Sommaire d'identification:}
+
+\begin{itemize}
+
+\item Titre~: Noter un utilisateur après un trajet
+
+\item Résumé~: Après un trajet, un utilisateur peut attribuer une note sur 5 aux autres participants
+du covoiturage. L'utilisateur peut donner ces notes lorsqu'il consulte un trajet auquel il a participé.
+Chaque utilisateur possède une note qui est la moyenne de toutes les notes qu'il a reçu.
+
+\item Date de création~: 14/01/2021
+
+\item Dernière mise à jour~: 28/01/2021
+
+\item Version~: 1.1
+
+\item Acteurs concernés~: Utilisateurs
+
+\item Responsables~:
+\begin{itemize}
+            \item Pierre Marty
+            \item Alexis Larcher
+        \end{itemize}
+
+\end{itemize}
+
+\item \textit{Description des enchaînements:}
+
+\begin{itemize}
+    \item Scénario nominal
+    \begin{enumerate}
+        \item L'utilisateur sélectionne une note pour les covoitureurs qu'il souhaite noter
+        \item L'utilisateur clique sur le bouton "Valider"
+        \item Le système recalcule les moyennes de chaque covoitureur qui vient d'être noté
+        \item Le système redirige l'utilisateur sur la page où il était
+    \end{enumerate}
+    \item Scénario alternatif
+    \item Scénario exceptionnel
+\end{itemize}
+
+\item \textit{Contraintes non fonctionnelles:}
+
+\item \textit{Pré-conditions~:}
+
+    \begin{itemize}
+        \item Être connecté
+        \item L'utilisateur est sur la page du trajet dont il veut noter les utilisateurs
+        \item L'utilisateur a participé au trajet
+        \item Le trajet est fini
+    \end{itemize}
+
+\item \textit{Post-conditions~:}
+    \begin{itemize}
+        \item Les moyennes des utilisateurs qui ont été noté est mise a jour
+        \item L'utilisateur est sur la page où il était avant
+    \end{itemize}
+    
+\item \textit{Vues graphiques~:}
+    
+    Voir images~«~\nameref{fig:Mes trajets}~» et 
+«~\nameref{fig:Noter les covoitureurs}~»
+
+\end{itemize}
+
+\subsection{Répondre à une réponse à un trajet}\label{subsec:accepter-reponse-trajet}
+
+\begin{itemize}
+
+\item \textit{Sommaire d'identification:}
+
+\begin{itemize}
+
+\item Titre~: Répondre à une réponse à un trajet
+
+\item Résumé~: Le créateur d'un trajet doit confirmer chaque réponse au trajet pour indiquer qu'il accepte de voyager avec l'utilisateur ayant répondu. Il peut aussi refuser s'il ne souhaite pas inclure cette personne au trajet.
+Une notification est alors envoyée à l'utilisateur ayant répondu lui témoignant la réponse du conducteur.
+
+Voir section~«~\ref{sec:fonctionnalites-notifications}~\nameref{sec:fonctionnalites-notifications}~».
+
+\item Date de création~: 10/02/2021
+
+\item Dernière mise à jour~: 10/02/2021
+
+\item Version~: 1.0
+
+\item Acteurs concernés~: Utilisateurs
+
+\item Responsables~:
+\begin{itemize}
+            \item Bastian Quentin
+        \end{itemize}
+
+\end{itemize}
+
+\item \textit{Description des enchaînements:}
+
+\begin{itemize}
+    \item Scénario nominal
+    \begin{enumerate}
+        \item L'utilisateur accède à la page "Mes notifications"
+        \item L'utilisateur clique sur le bouton "Répondre" de la notification de réponse à un trajet
+        \item Le système demande confirmation à l'utilisateur avec une fenêtre popup
+        \item L'utilisateur clique sur le bouton "Confirmer"
+        \item Le système inscrit l'utilisateur ayant créé la réponse au trajet
+        \item Le système envoie une notification à l'utilisateur ayant créé la réponse
+    \end{enumerate}
+    \item Scénario alternatif
+    \begin{enumerate}[{1{a}.}]\setcounter{enumi}{1}
+            \item Le trajet est plein
+            \begin{enumerate}[{1.}]\setcounter{enumii}{2}
+                \item Le système indique que le trajet est plein et le bouton "Répondre" n'est pas disponible
+                \item Fin du scénario alternatif
+            \end{enumerate}
+            \setcounter{enumi}{3}
+            \item L'utilisateur annule sa demande de confirmation
+            \begin{enumerate}[{1.}]\setcounter{enumii}{4}
+                \item Fin du scénario alternatif
+            \end{enumerate}
+        \end{enumerate}
+            \begin{enumerate}[{1{b}.}]\setcounter{enumi}{3}
+                \item L'Utilisateur clique sur le bouton "Refuser"
+                \begin{enumerate}[{1.}]\setcounter{enumii}{4}
+                    \item Le système envoie une notification à l'utilisateur ayant créé la réponse
+                    \item Fin du scénario alternatif
+                \end{enumerate}
+        \end{enumerate}
+    \item Scénario exceptionnel
+\end{itemize}
+
+\item \textit{Contraintes non fonctionnelles:}
+
+\item \textit{Pré-conditions~:}
+\begin{itemize}
+        \item Être connecté
+        \item L'utilisateur est sur la page "Mes Notifications"
+    \end{itemize}
+
+\item \textit{Post-conditions~:}
+\begin{itemize}
+        \item L'utilisateur ayant créé la réponse est inscrit au trajet
+        \item L'utilisateur est sur la page "Mes notifications"
+    \end{itemize}
+    
+    \item \textit{Vues graphiques~:}
+    
+    Voir image~«~\nameref{fig:Mes notifications - Notifications}~»
+
+\end{itemize}
+
+
+\subsection{Annuler un trajet}\label{subsec:annuler-trajet}
+
+\begin{itemize}
+
+\item \textit{Sommaire d'identification:}
+
+\begin{itemize}
+
+\item Titre~: Refuser une réponse à un trajet
+
+\item Résumé~: Le créateur d'un trajet peut l'annuler, si le trajet ne démarre pas dans moins de 24h.
+Une notification est alors envoyée aux autres membres du trajet.
+
+Voir section~«~\ref{sec:fonctionnalites-notifications}~\nameref{sec:fonctionnalites-notifications}~».
+
+\item Date de création~: 10/02/2021
+
+\item Dernière mise à jour~: 10/02/2021
+
+\item Version~: 1.0
+
+\item Acteurs concernés~: Utilisateurs
+
+\item Responsables~:
+\begin{itemize}
+            \item Bastian Quentin
+        \end{itemize}
+
+\end{itemize}
+
+\item \textit{Description des enchaînements:}
+
+\begin{itemize}
+    \item Scénario nominal
+    \begin{enumerate}
+        \item L'utilisateur accède à la page "Mes trajets"
+        \item L'utilisateur clique sur "Supprimer le trajet" (seulement présent pour les trajet qui démarre dans plus de 24h)
+        \item Le système demande confirmation à l'utilisateur avec une fenêtre popup
+        \item L'utilisateur confirme la suppression
+        \item Le système supprime le trajet
+        \item Le système envoie une notification à tous les membres du trajet sauf le créateur
+    \end{enumerate}
+    \item Scénario alternatif
+    \begin{enumerate}[{1{a}.}]\setcounter{enumi}{2}
+            \item L'utilisateur annule sa demande de suppression du trajet
+            \begin{enumerate}[{1.}]\setcounter{enumii}{3}
+                \item Fin du scénario alternatif
+            \end{enumerate}\item Suppression du trajet impossible~: le trajet démarre dans moins de 24h
+            \begin{enumerate}[{1.}]\setcounter{enumii}{4}
+                \item Fin du scénario alternatif
+            \end{enumerate}
+        \end{enumerate}
+    \item Scénario exceptionnel
+\end{itemize}
+
+\item \textit{Contraintes non fonctionnelles:}
+
+\item \textit{Pré-conditions~:}
+\begin{itemize}
+        \item Être connecté
+        \item L'utilisateur est sur la page "Mes trajets"
+    \end{itemize}
+
+\item \textit{Post-conditions~:}
+\begin{itemize}
+        \item Le trajet n'existe plus
+        \item L'utilisateur est sur la page "Mes trajets"
+    \end{itemize}
+    
+    \item \textit{Vues graphiques~:}
+    
+    Voir image~«~\nameref{fig:Mes trajets}~»
+
+\end{itemize}

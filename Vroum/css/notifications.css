@@ -1,0 +1,178 @@
+/* CSS FOR THE PAGES "MY NOTIFICATIONS" */
+
+.previous_notifications_2{
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+    top:0px;
+    left:0px;
+    z-index: 101;
+    border-radius: 50%;
+}
+
+.block_notif > .block_notif_contenu{
+    background-color: var(--white);
+    border-radius: 20px 20px 0px 0px;
+}
+
+.block_notif > .block_notif_date{
+    border-radius: 0px 0px 20px 20px;
+    background-color: var(--translucid-05-white);
+}
+.block_notif{
+    border-radius: 20px;
+    box-shadow: -5px 5px 10px 0 var(--translucid-03-black);
+}
+
+.list_notifications{
+    z-index: 10;
+    position: relative;
+    background-color: var(--darkgrey);
+    border-radius: 30px;
+}
+
+.exped_notif{
+    width: max-content;
+    border-radius: 15px 15px 0px 0px;
+    box-shadow: 0px 0px 20px 0 var(--translucid-02-black);
+}
+
+.notif_box_choice{
+    max-width: 400px;
+    min-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.notif_choice{
+    text-align: center;
+    min-width: 100px;
+    border-radius: 100px;
+    background-color: var(--darkergrey);
+    color: var(--white);
+}
+
+.trash_icon_notif{
+    background-color: var(--red-delete);
+    width: 30px;
+    height: 30px;
+    border-radius: 30%;
+    bottom: -10px;
+    right: -10px;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.trash_icon_all{
+    background-color: var(--dark-red-delete);
+    color: var(--white);
+    width: 35px;
+    height: 35px;
+    border-radius: 30%;
+    top: -10px;
+    right: -10px;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.bubble_notifications_user{
+    padding-right: 3px;
+    padding-left: 3px;
+    border-radius: 100px;
+    min-width: 50px;
+    height: 50px;
+    margin-right: -1rem;
+}
+
+.btn_notification_user{
+    width: max-content;
+    line-height: 50px;
+    border-radius: 100px;
+    box-shadow: 0px 0px 10px 0 var(--translucid-02-black);
+    background-color: var(--white);
+}
+
+.message_in_notification{
+    min-width: 90%;
+}
+
+.img_new_notification{
+    width: 25px;
+    height: 25px;
+    top: -8px;
+    left: -8px;
+    box-shadow: 0px 0px 5px 0px var(--translucid-05-white);
+    border-radius: 50%;
+
+    animation-timing-function: linear;
+    -webkit-animation: highlight_notification 3s linear infinite;
+    -moz-animation: highlight_notification 3s linear infinite;
+    animation: highlight_notification 3s linear infinite;
+}
+
+@-webkit-keyframes highlight_notification {
+    0%{
+        transform: scale(1);
+        box-shadow: 0px 0px 5px 0px var(--translucid-05-white);
+    }
+    25%{
+        transform: scale(1.1);
+        box-shadow: 0px 0px 7px 0px var(--translucid-05-white);
+    }
+    50%{
+        transform: scale(1);
+        box-shadow: 0px 0px 5px 0px var(--translucid-05-white);
+    }
+    75%{
+        transform: scale(0.9);
+        box-shadow: 0px 0px 3px 0px var(--translucid-05-white);
+    }
+    100%{
+        transform: scale(1);
+        box-shadow: 0px 0px 5px 0px var(--translucid-05-white);
+    }
+}
+@-moz-keyframes highlight_notification {
+    0%{
+        transform: scale(1);
+        box-shadow: 0px 0px 5px 0px var(--translucid-05-white);
+    }
+    25%{
+        transform: scale(1.1);
+        box-shadow: 0px 0px 7px 0px var(--translucid-05-white);
+    }
+    50%{
+        transform: scale(1);
+        box-shadow: 0px 0px 5px 0px var(--translucid-05-white);
+    }
+    75%{
+        transform: scale(0.9);
+        box-shadow: 0px 0px 3px 0px var(--translucid-05-white);
+    }
+    100%{
+        transform: scale(1);
+        box-shadow: 0px 0px 5px 0px var(--translucid-05-white);
+    }
+}
+@keyframes highlight_notification {
+    0%{
+        transform: scale(1);
+        box-shadow: 0px 0px 5px 0px var(--translucid-05-white);
+    }
+    25%{
+        transform: scale(1.1);
+        box-shadow: 0px 0px 7px 0px var(--translucid-05-white);
+    }
+    50%{
+        transform: scale(1);
+        box-shadow: 0px 0px 5px 0px var(--translucid-05-white);
+    }
+    75%{
+        transform: scale(0.9);
+        box-shadow: 0px 0px 3px 0px var(--translucid-05-white);
+    }
+    100%{
+        transform: scale(1);
+        box-shadow: 0px 0px 5px 0px var(--translucid-05-white);
+    }
+}

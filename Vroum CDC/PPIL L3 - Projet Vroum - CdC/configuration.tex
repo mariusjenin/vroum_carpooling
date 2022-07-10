@@ -1,0 +1,43 @@
+\definecolor{titlepagecolor}{cmyk}{0,.8,.5,1}
+
+\renewcommand\epigraphflush{flushright}
+\renewcommand\epigraphsize{\normalsize}
+\setlength\epigraphwidth{0.7\textwidth}
+
+\DeclareFixedFont{\titlefont}{T1}{ppl}{b}{it}{0.5in}
+
+\makeatletter
+\def\printauthor{%                  
+  {\large \@author}
+}
+
+\def\@makechapterhead#1{%
+  \vspace*{50\p@}% <----------------- Space from top of page to Chapter #
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+        {\huge\bfseries Partie \thechapter\hskip1em}\\% <-- Chapter #
+    \fi
+    \interlinepenalty\@M
+    \bigskip
+    {\Huge \bfseries #1\par\nobreak}% <------------------ Chapter title
+    \vskip 90\p@% <------------------ Space between chapter title and first paragraph
+    
+    \begin{minipage}{.8\linewidth}
+      \small
+      \startcontents[chapters]
+    \printcontents[chapters]{}{1}{}
+    \end{minipage}
+
+    \titlepagedecoration
+
+    \clearpage
+  }
+}
+
+\makeatother
+
+\graphicspath{{./res/}}
+
+\newcommand{\todo}[1]{{\color{red}\Large TODO: \textbf{#1}}}
+% \renewcommand{\todo}[#1]{}
+% uncomment this not to show TODOs

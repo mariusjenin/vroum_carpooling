@@ -1,0 +1,217 @@
+/* CSS FOR THE PAGES "SIGNUP" "LOGIN" & "PASSWORD FORGET" */
+
+.signup_login_pwdforget_form{
+    background-color: var(--white);
+    padding:30px;
+}
+
+.signup_block , .login_block, .pwdForget_block{
+    box-shadow: -5px 5px 10px 0 var(--translucid-05-grey);
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    top:0;
+    right: 0;
+
+}
+
+.signup_block{
+    max-width: 1000px;
+}
+
+.login_block, .pwdForget_block{
+    max-width: 700px;
+}
+
+.item_field_signup_login_pwdforget{
+    padding-bottom: 15px;
+}
+
+.profile_picture_signup_login_pwdforget{
+    height: 100px;
+    width: 100px;
+    border-radius: 5%;
+    object-fit: cover;
+}
+
+.add_profile_picture{
+    max-height: 30px;
+    max-width: 30px;
+    background-color: var(--white);
+    box-shadow: 0px 2px 5px 0 var(--translucid-05-grey);
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    bottom: -8px;
+    right: -8px;
+    transition: 0.2s;
+}
+
+.add_profile_picture:hover{
+    transform: scale(1.1);
+}
+.add_profile_picture:active{
+    transform: scale(0.9);
+}
+
+.add_profile_picture img {
+    padding: 3px;
+}
+
+.signup_login_pwdforget_title{
+    background-color: var(--translucid-05-white);
+    margin: 0;
+}
+
+.btn_signup_login{
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 var(--translucid-02-black);
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.btn_signup_login:hover{
+    box-shadow: 0 0 10px 0 var(--translucid-02-black);
+}
+.btn_signup_login:active{
+    box-shadow: 0 0 2px 0 var(--translucid-02-black);
+}
+
+
+.btn_signup_login:hover{
+    box-shadow: 0 0 10px 0 var(--translucid-02-black);
+}
+.btn_signup_login:active{
+    box-shadow: 0 0 2px 0 var(--translucid-02-black);
+}
+
+.submit_signup_login_pwdforget{
+    width: 70px;
+    height: 70px;
+    padding: 15px;
+    border-radius: 40px;
+    border: none;
+    background-color: white;
+    box-shadow: -2px 2px 10px 0 var(--translucid-02-black);
+}
+
+.block_submit{
+    min-height: 73px;
+}
+
+.back_signup_login{
+    display: inline-block;
+    height: 40px;
+}
+
+.back_signup_login img{
+    opacity: 0.7;
+    box-shadow: 0 0 5px 0 var(--translucid-05-black);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.back_signup_login img:hover{
+    opacity: 0.8;
+    box-shadow: 0 0 10px 0 var(--translucid-05-black);
+}
+
+.back_signup_login img:active{
+    box-shadow: 0 0 3px 0 var(--translucid-05-black);
+}
+
+.paral_signup_login_pwdforget_1{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(
+            0vw 12.5vh,
+            0vw 0vh,
+            40vw 100vh,
+            35vw 100vh);
+    background-color: var(--darkergrey);
+}
+
+.paral_signup_login_pwdforget_2{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(
+            5vw 0px,
+            65vw 0px,
+            100vw 70vh,
+            100vw 100vh,
+            45vw 100vh);
+    background-color: var(--darkergrey);
+}
+.paral_signup_login_pwdforget_3{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(
+            75vw 0px,
+            85vw 0px,
+            100vw 27.5vh,
+            100vw 47.5vh);
+    background-color: var(--darkergrey);
+}
+
+@media (max-width: 992px) {
+    .profile_picture_signup_login_pwdforget{
+        height: 75px;
+        width: 75px;
+    }
+
+    .add_profile_picture{
+        max-height: 25px;
+        max-width: 25px;
+        bottom: -5px;
+        right: -5px;
+    }
+
+    .paral_signup_login_pwdforget_1{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(
+                0vw 32.5vh,
+                0vw 20vh,
+                42.5vw 100vh,
+                35vw 100vh);
+        background-color: var(--darkergrey);
+    }
+
+    .paral_signup_login_pwdforget_2{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(
+                0vw 60px,
+                0vw 0px,
+                50vw 0vh,
+                100vw 80vh,
+                100vw 100vh,
+                50vw 100vh);
+        background-color: var(--darkergrey);
+    }
+    .paral_signup_login_pwdforget_3{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(
+                60vw 0px,
+                72.5vw 0px,
+                100.00vw 45vh,
+                100vw 65vh);
+        background-color: var(--darkergrey);
+    }
+}
+
+.signup_login_pwdforget_neutral{
+    background-color: var(--white);
+    padding:30px;
+}
+

@@ -1,0 +1,31 @@
+/* CSS OF THE PAGE "MY FRIENDS LIST" */
+
+
+.shadowed_box_border_radius {
+    box-shadow: 0px 0px 10px 0 var(--translucid-02-black);
+    border-radius: 15px;
+}
+
+.trash_icon_friend_list, .enter_icon_friend_list{
+    width: 30px;
+    height: 30px;
+    border-radius: 30%;
+    font-size: 1.4rem;
+    cursor: pointer;
+
+}
+
+.trash_icon_friend_list{
+    background-color: var(--red-delete);
+}
+
+.enter_icon_friend_list{
+    background-color: var(--lightbluelagoon);
+}
+
+
+.block_icon_friend_list{
+    bottom: -15px;
+    right: 15px;
+
+}
